@@ -1,0 +1,19 @@
+{
+  "_comment": "Cada item desta lista gera automaticamente um slide no carrossel da seção 'Experiências em campo'. Para adicionar um novo vídeo: copie um bloco abaixo e troque: videoId (do YouTube), title (linha principal do título, fica em azul escuro), subtitle (linha secundária, fica em azul mais claro, embaixo do title), text (parágrafo) e o nome do arquivo do QR code (a imagem precisa estar salva em assets/experiences/qrcodes/). Use \\n dentro de title ou subtitle só se precisar forçar mais de uma linha naquele bloco. Evite títulos com uma palavra única muito longa (tipo 'REASSENTAMENTO') sem nenhum espaço perto do limite da coluna - se cortar, encurte a palavra ou avise para ajustarmos o layout. Não precisa reiniciar nada além do servidor.",
+  "items": [
+    {
+      "videoId": "BnHsHgR1SyM",
+      "title": "Plano de Reassentamento",
+      "subtitle": "Projeto no Estado de Sergipe",
+      "text": "Neste vídeo é apresentado como a DMS conduziu o Plano de Reassentamento de um projeto de infraestrutura no estado de Sergipe, beneficiando mais de 130 famílias.",
+      "qr": "sergipe-reassentamento.png"
+    },
+    {
+      "videoId": "ZXKXXMpK5RQ",
+      "title": "Processo Participativo e",
+      "subtitle": "Negociação Coletiva",
+      "text": "Neste vídeo, apresentamos como a DMS estrutura processos participativos de acesso à terra, utilizando a negociação coletiva como estratégia para construir acordos amigáveis, reduzir riscos e fortalecer a legitimidade do projeto no território.",
+      "qr": "negociacao-coletiva.png"
+    }
+  ]
+}

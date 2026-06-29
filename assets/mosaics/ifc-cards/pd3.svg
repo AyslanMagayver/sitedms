@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="320" viewBox="0 0 720 320" role="img" aria-label="PD3 Eficiência de Recursos e Prevenção da Poluição">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6F777D"/>
+      <stop offset="1" stop-color="#9EA5AA"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <rect x="10" y="10" width="700" height="300" rx="18" fill="url(#bg)" filter="url(#shadow)"/>
+  <path d="M 438 10 H 710 V 310 H 474 C 534 232, 525 97, 438 10 Z" fill="#FFFFFF" opacity="0.07"/>
+  <text x="704" y="268" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="166" font-weight="900" fill="#FFFFFF" opacity="0.18">PD3</text>
+  <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIkAAACJCAYAAAAYJBvJAAAF0UlEQVR4nO2dT4gcRRTGvywzwoqswioEUUQjXqIQxD9EYS8qiIiggpdVEEk8yeLFWxAUD14CIYggiB5CwENUUBEvQg56EEUWNBfxDyLIQhSiYAJOmJWSN9gppueN3dVV9aq+Hyw7MzvT/bb7m1evXr2q2rO7u4uKOAZgC8A2gNtTG2OFPQWLZBXABe+1aePxtQB2IttkkhWUx1R+/pLfB8WDNAXi+C2RfeYYoSy+nvPa53Neew/AxQj2FEHs5uYQgHsAPKO87yUA+yV2eKXlPRsADgM4D+BDAB/N8RY1eVAzInGe6W/vtRflRvs38HkAx73X2m7yjsQQjk0AJ3raSZEkEsmBFne/iD8BfAvgEwAvL/H+bTlPX14H8FyA41RBSJEs6+pz4VkAb6Y2wgI1u90nUxtQi0jWpYmx5kUcj6Q2oIYu8FkRiTVcHHRVaiNq8CQ/GxWI45fUBtQikuthF5dIIxF6NxZjkBk1B+udqO2CfZnaAIvU5ElcLHJDaiMsslLg/zNv+N8NDVAgEbvAjyJP7pXfszEekri5OQdgDXlRmlc0f2FdMuoFxOEpKQdo43cKJN9v39Een311yXO7QbiTAK5oKTd8CMA1PewgEUaBu/Ry9gH4qfH8HQBPeO85L6JwKXRiWCT+zT0j3cwH5fllLBEsgz4DfH80HjNoLJi+zY0TGQuKC6fkeTckEGwmSOeYpM/YDGfGVeJJtHkxi0ZZOXWyopikizd5HMD7/UwipccklivWSAsMXEl0kewNfDySsUhu6Xg8qxX0JKJIGJNUJJKuzQabm4pE0tUjUCQFQk9COovkJv2jpPaMa59CZ+ZeKhFJnwE+iqQweEOJCkVCVCgSokKRkE4iuVH/GKldJPclsIMYEwlT62Rwkcxm8JGCRXJlz2P683pJgSLpWxNCT1KBSK7reUzGNIUxRHNDKhjgC7GyIpN0BcGbSVQoEqJCkRAVioSoUCQkmUjc7t5WcKPeR4zZfATAG7Fs9rvA7oL9EOC4dwH4Cnnjlj9/15hnPQXgscbzTwE8MPRJ/YsSYjtVx/3Il48lF+QLJFcOib1TTyDJlsO6M9Bxu84lHop5m1rnzjEAW8gA35O4LeJD4LaQz4ET8g20IpD9AL4Xm5cRyDiFJwlVuhjF+AV8FlDwMdgSz5ElKwOtL5Jim5M7AHwj30ILAlkF8JbY21UgEyTwJJcHOm7MucSb0qxYYV2C5g1UsLZ8artPG/EYzS732xluJlWcSB4G8AFscWrArmuSwDVXsukO/o/qvC8iLA+WJCbJiVDZ35g8LcFoLKJ4kpWMM4xWBDKScZRpZIFEIydPctbYEp9rAH4N2CPM9v41PUnoqHuZ1PxBWVVpakggm2LvucQCSaLE0BG4ywN81/K305byBBlncaPHJC4WCMnV3vO1xliKFYEcEEFbyeIO7kluDXzs2SDfhmQYrTQnbbUm1dIsOgox38Y62wFramLgNqG6u8YucEosCSQaFAlRoUiICkVim3GMk1AkRIUisc0kxkkoEmJqgK/Jjkw86tMmj2SKyFA1HT96G2VfVGzx7R1b6XbnKpJ9AC4EOtZQScKbAx3HlRkcthC45jJPZkYogZCCRUIyFAm3aiWqSLjpQDrGMCKS0GUCpCAYk1SSEAshEksFQeQ/OHZTCWNkDtPyRIUiSc8YmZNrWv41AMe9izhusXvcCP5m75nI4yEr3Ldkyshqi43z8O1bl6JrE4XQLIK2yRkAt8VobnL1JiQTnEiYSCOqSLjTFVFFwhFgoook1AK/pGCRuOUfCFkoEtaSkIUw40pUKBKiQpEQFYrENpMYJ6FIbDOJJRI3SERscjLVNvSEXAKbG6JCkZBF/FtGQpEQFYqEqFAkRIUiIRQJ6Q89CVGhSIgKRUJUOOeGqDMO6UmICj0JUXVBT0JUKBKiQpEQFYqEqDBwJaM5l+CSxXjoSYgKPQlZBJNpZDnY3BAVioSocN5N3YyWWFZ08g+hl+1FdJK4LgAAAABJRU5ErkJggg==" x="456" y="66" width="178" height="178" preserveAspectRatio="xMidYMid meet"/>
+  <text x="42" y="86" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900" fill="#FFFFFF">PD3</text>
+  <line x1="42" y1="102" x2="178" y2="102" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.65"/>
+  <text font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF" letter-spacing="0">
+        <tspan x="42" y="161.0">EFICIÊNCIA DE RECURSOS E</tspan>
+        <tspan x="42" y="191.0">PREVENÇÃO DA POLUIÇÃO</tspan>
+  </text>
+</svg>

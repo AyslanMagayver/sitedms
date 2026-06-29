@@ -1,0 +1,24 @@
+.env
+node_modules/
+
+# logs
+*.log
+
+# perfis de navegador usados em QA automatizado
+chrome-manual-profile/
+chrome-premium-mobile-profile/
+chrome-premium-qa-profile/
+chrome-ux-client-profile/
+edge-manual-profile/
+
+# auditorias e extrações temporárias (não fazem parte do site)
+ux-audit/
+multi-audit/
+conversion-audit/
+ppt_extract_2b32a5995b6c44f7a2e4d64d5f04c03a/
+
+# capturas de tela e backups de trabalho
+_qa-*.png
+preview_*.jpg
+preview_*.png
+*.bak_atua
