@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="320" viewBox="0 0 720 320" role="img" aria-label="PD1 Avaliação e Gestão de Riscos e Impactos Socioambientais">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9F1F35"/>
+      <stop offset="1" stop-color="#C92D45"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <rect x="10" y="10" width="700" height="300" rx="18" fill="url(#bg)" filter="url(#shadow)"/>
+  <path d="M 438 10 H 710 V 310 H 474 C 534 232, 525 97, 438 10 Z" fill="#FFFFFF" opacity="0.07"/>
+  <text x="704" y="268" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="166" font-weight="900" fill="#FFFFFF" opacity="0.18">PD1</text>
+  <image href="data:image/png;base64,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" x="456" y="66" width="178" height="178" preserveAspectRatio="xMidYMid meet"/>
+  <text x="42" y="86" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900" fill="#FFFFFF">PD1</text>
+  <line x1="42" y1="102" x2="178" y2="102" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.65"/>
+  <text font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF" letter-spacing="0">
+        <tspan x="42" y="146.0">AVALIAÇÃO E GESTÃO DE</tspan>
+        <tspan x="42" y="176.0">RISCOS E IMPACTOS</tspan>
+        <tspan x="42" y="206.0">SOCIOAMBIENTAIS</tspan>
+  </text>
+</svg>
