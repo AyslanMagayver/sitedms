@@ -2345,8 +2345,18 @@ body.motion-ready .reveal-item:nth-child(4) {
   padding: 16px 16px 18px;
 }
 
+.team-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 44px;
+}
+
 .team-card h2 {
   margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
   color: var(--navy);
   font-size: clamp(1.05rem, 1.3vw, 1.28rem);
   line-height: 1.05;
@@ -2354,18 +2364,8 @@ body.motion-ready .reveal-item:nth-child(4) {
   text-transform: none;
 }
 
-.team-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  min-height: 44px;
-}
-
 .team-role {
   margin: 0;
-  flex: 1 1 auto;
-  min-width: 0;
   color: var(--muted);
   font-size: 0.88rem;
   font-weight: 600;
@@ -7309,3 +7309,45 @@ body.motion-ready .atua-section.atua-inview .pin-sergipe {
     clip-path: none;
     transform: none;
   }
+
+  .sector-wedge--1 .wedge-content,
+  .sector-wedge--2 .wedge-content,
+  .sector-wedge--3 .wedge-content,
+  .sector-wedge--4 .wedge-content {
+    position: static;
+    left: auto;
+    top: auto;
+    width: auto;
+    flex-direction: row;
+    gap: 8px;
+    transform: none;
+  }
+
+  .wedge-label {
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .sector-wedge:hover,
+  .sector-wedge:focus-visible {
+    transform: scale(1.03);
+  }
+
+  .sector-wedge.is-active {
+    transform: scale(1.05);
+  }
+
+  .sector-fan-hint {
+    font-size: 0.72rem;
+  }
+
+  .sector-fan-cta {
+    margin-top: 14px;
+    padding: 10px 16px 10px 6px;
+  }
+
+  .sector-fan-arrow svg {
+    width: 30px;
+    height: 18px;
+  }
+}
