@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>QA viewport</title>
+<style>
+  body { margin: 0; background: #222; }
+  iframe { display: block; margin: 0 auto; border: 0; background: #fff; }
+</style>
+</head>
+<body>
+<iframe id="f"></iframe>
+<script>
+  const params = new URLSearchParams(location.search);
+  const w = Number(params.get('w') || 390);
+  const f = document.getElementById('f');
+  f.src = '/index.html?v=' + Date.now();
+  f.style.width = w + 'px';
+  f.style.height = '4000px';
+  f.addEventListener('load', () => {
+    const fit = () => { f.style.height = f.contentDocument.documentElement.scrollHeight + 'px'; };
+    setTimeout(fit, 800);
+    setTimeout(fit, 2500);
+  });
+</script>
+</body>
+</html>

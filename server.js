@@ -67,6 +67,8 @@ const mimeTypes = {
   ".css": "text/css; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
   ".json": "application/json; charset=utf-8",
+  ".txt": "text/plain; charset=utf-8",
+  ".xml": "application/xml; charset=utf-8",
   ".png": "image/png",
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg",
@@ -76,6 +78,9 @@ const mimeTypes = {
   ".webp": "image/webp",
   ".ico": "image/x-icon",
 };
+
+// Extensões de texto que valem a pena comprimir com gzip
+const compressibleExtensions = new Set([".html", ".css", ".js", ".json", ".svg", ".txt", ".xml"]);
 
 const server = createServer(async (req, res) => {
   try {
@@ -387,14 +392,40 @@ async function serveStatic(req, res) {
   }
 
   const ext = extname(filePath).toLowerCase();
+  // HTML/CSS/JS revalidam via ETag (304 quando não mudou);
+  // imagens e fontes podem ficar 7 dias em cache do navegador/CDN.
   const cacheControl = [".html", ".css", ".js", ".json"].includes(ext)
-    ? "no-store"
-    : "public, max-age=3600";
+    ? "no-cache"
+    : "public, max-age=604800";
+
+  const stats = statSync(filePath);
+  const etag = `"${stats.size.toString(16)}-${stats.mtimeMs.toString(16)}"`;
   const headers = {
     ...securityHeaders,
     "Content-Type": mimeTypes[ext] || "application/octet-stream",
     "Cache-Control": cacheControl,
+    ETag: etag,
   };
+
+  if (req.headers["if-none-match"] === etag) {
+    res.writeHead(304, headers);
+    res.end();
+    return;
+  }
+
+  // gzip para arquivos de texto quando o cliente aceita
+  const acceptsGzip = /\bgzip\b/.test(String(req.headers["accept-encoding"] || ""));
+  if (acceptsGzip && compressibleExtensions.has(ext)) {
+    const { gzipSync } = await import("node:zlib");
+    const compressed = gzipSync(readFileSync(filePath));
+    res.writeHead(200, { ...headers, "Content-Encoding": "gzip", Vary: "Accept-Encoding" });
+    if (req.method === "HEAD") {
+      res.end();
+      return;
+    }
+    res.end(compressed);
+    return;
+  }
 
   res.writeHead(200, headers);
   if (req.method === "HEAD") {
