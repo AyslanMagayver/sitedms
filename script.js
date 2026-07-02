@@ -516,6 +516,11 @@ if (contactForm) {
         method: "POST",
         body: formData,
       });
+      // 404/405 = hospedagem estática sem a API de envio
+      if (response.status === 404 || response.status === 405) {
+        throw new TypeError("api-indisponivel");
+      }
+
       const result = await response.json().catch(() => ({}));
 
       if (!response.ok || !result.ok) {
@@ -525,9 +530,11 @@ if (contactForm) {
       contactForm.reset();
       setFormStatus("Mensagem enviada com sucesso. Em breve a equipe DMS retornará o contato.", "success");
     } catch (error) {
+      // Em hospedagem estática (sem backend Node) o POST falha: oferece os
+      // canais diretos em vez de uma mensagem técnica.
       const friendlyMessage =
         error instanceof TypeError
-          ? "Não foi possível conectar à API de envio. Verifique se o servidor Node está rodando e se o SMTP está configurado."
+          ? "O envio pelo site está temporariamente indisponível. Fale conosco pelo WhatsApp (botão acima) ou envie um e-mail para contato@dmsocioambiental.com."
           : error.message || "Não foi possível enviar. Tente novamente mais tarde.";
       setFormStatus(friendlyMessage, "error");
     } finally {

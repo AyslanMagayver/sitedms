@@ -1,0 +1,44 @@
+# DMS Desempenho Socioambiental — configuração para GoDaddy (Apache)
+
+# Força HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Os arquivos api/logos e api/experiences são snapshots JSON estáticos
+<FilesMatch "^(logos|experiences|carousel)$">
+  ForceType application/json
+</FilesMatch>
+
+# Tipos MIME
+AddType image/webp .webp
+AddType image/avif .avif
+
+# Compressão
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain application/javascript application/json image/svg+xml application/xml
+</IfModule>
+
+# Cache: imagens e fontes por 7 dias; HTML/CSS/JS revalidam
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png "access plus 7 days"
+  ExpiresByType image/jpeg "access plus 7 days"
+  ExpiresByType image/webp "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 7 days"
+  ExpiresByType text/css "access plus 0 seconds"
+  ExpiresByType application/javascript "access plus 0 seconds"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Cabeçalhos de segurança
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Bloqueia arquivos que não devem ir a público (caso subam por engano)
+<FilesMatch "^(\.env|server\.js|package(-lock)?\.json|README.*|.*\.log)$">
+  Require all denied
+</FilesMatch>
