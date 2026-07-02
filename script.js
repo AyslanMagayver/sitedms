@@ -2,7 +2,7 @@ const header = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav");
 let lastScrollY = window.scrollY;
-
+ 
 function updateHeader() {
   if (!header) return;
   const currentScrollY = window.scrollY;
