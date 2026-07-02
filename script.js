@@ -420,13 +420,17 @@ if (experienceCarousel) {
     }
   });
 
-  if (window.location.protocol !== "file:") {
-    fetch("/api/experiences")
+if (window.location.protocol !== "file:") {
+    fetch("/assets/experiences/experiences.json")
       .then((response) => (response.ok ? response.json() : null))
-      .then((result) => {
-        if (result?.ok && result.items?.length) {
-          renderExperienceSlides(result.items);
-        }
+      .then((data) => {
+        const items = (data?.items || [])
+          .filter((item) => item && item.videoId)
+          .map((item) => ({
+            ...item,
+            qr: item.qr ? `/assets/experiences/qrcodes/${item.qr}` : null,
+          }));
+        if (items.length) renderExperienceSlides(items);
       })
       .catch(() => {});
   }
