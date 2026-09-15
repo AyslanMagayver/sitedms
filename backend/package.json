@@ -1,0 +1,16 @@
+{
+  "name": "dms-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API do site DMS Desempenho Socioambiental (formulário de contato)",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "watch": "node --watch src/server.js"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "license": "ISC"
+}
