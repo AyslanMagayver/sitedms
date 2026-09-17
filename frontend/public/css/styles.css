@@ -5388,6 +5388,12 @@ body.motion-ready .solutions-grid .solution-card.reveal-item {
   .sectors > .container {
     width: min(1120px, calc(100% - 96px));
   }
+
+  .sectors .sector-panel {
+    --sector-panel-width: min(1700px, calc(100vw - 64px));
+    width: var(--sector-panel-width);
+    margin-left: calc((100% - var(--sector-panel-width)) / 2);
+  }
 }
 
 .sectors .section-title {
