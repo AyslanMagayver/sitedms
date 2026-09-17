@@ -29,13 +29,12 @@ O JavaScript usa ES modules (`<script type="module">`), então as páginas preci
 
 - **Membro do time:** duplique um `<article class="team-card">` em `time.html`. Foto em `assets/team/` (usar `.webp`, ~640px de largura). LinkedIn: `<a class="team-link" href="URL">` (com link) ou `<span class="team-link">` (oculto).
 - **Logos de clientes/parceiros:** salve o arquivo em `assets/logos/<setor>/<clientes|parceiros>/` (ou `assets/logos/geral/`) e adicione um `<img>` na grade correspondente em `index.html`: dentro do detalhe do setor (`.sector-logo-grid` / `.sector-partner-logos`) e, se for o caso, na nuvem `.logo-cloud`. O `alt` é o nome exibido.
-- **Vídeos de experiências:** duplique um `<article class="experience-slide">` dentro de `.experience-track` em `index.html` (só o primeiro slide leva a classe `is-active`) e troque:
-  - `experience-title-main` (linha principal, azul escuro) e `experience-title-sub` (linha secundária, azul mais claro);
-  - o parágrafo de descrição;
-  - a imagem do QR code, salva em `assets/experiences/qrcodes/`, e seu `alt`;
-  - o ID do vídeo na URL do `iframe` (`https://www.youtube.com/embed/<ID>?enablejsapi=1&amp;cc_load_policy=0`) e o `title` do `iframe`.
+- **Vídeos de Projetos na prática:** duplique um `<article class="project-card">` dentro de `.projects-gallery` em `index.html` e troque:
+  - o ID do vídeo do YouTube em `data-video-id` e na URL da miniatura (`https://i.ytimg.com/vi/<ID>/maxresdefault.jpg`);
+  - o título (`h3`), o parágrafo de descrição e o texto do `aria-label` do botão (`Assistir ao vídeo: <título>`);
+  - a imagem do QR Code, salva em `assets/experiences/qrcodes/` e apontando para `https://youtu.be/<ID>`, e seu `alt`.
 
-  Os pontinhos de navegação são criados automaticamente conforme a quantidade de slides. Mantenha os parâmetros da URL: `enablejsapi=1` permite pausar um vídeo quando outro começa a tocar, e `cc_load_policy=0` deixa as legendas desligadas por padrão (o botão CC do player continua disponível). Evite títulos com uma palavra única muito longa (ex.: "REASSENTAMENTO") perto do limite da coluna; se cortar, encurte o texto ou ajuste o layout.
+  O vídeo só é carregado quando a pessoa clica na miniatura, e apenas um toca por vez (`js/modules/project-videos.js`). No celular o QR Code fica oculto, já que a pessoa já está no próprio aparelho.
 - **Assuntos do formulário:** atualize o `<select>` em `index.html` **e** `CONTACT_SUBJECTS` em `backend/src/validators/contact.validator.js`.
 - **Endereço da API:** `js/config.js` (e o `action` do formulário em `index.html`).
 

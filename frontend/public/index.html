@@ -92,15 +92,18 @@
     </header>
 
     <main id="top">
-      <section class="hero" aria-label="DMS Desempenho Socioambiental">
-        <div class="hero-art" aria-hidden="true">
-          <img decoding="async" loading="lazy" src="assets_new/image1.png" alt="" />
-        </div>
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <span class="section-rule" aria-hidden="true"></span>
-            <h1>Quem<br>somos?</h1>
-            <div class="lead hero-lead-copy">
+      <section class="about" aria-label="DMS Desempenho Socioambiental">
+        <div class="container about-grid">
+          <svg class="about-decor" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <path class="about-decor-shape" d="M 530 0 C 492 120 548 230 518 360 C 492 480 500 640 530 760 C 548 850 510 930 526 1000 L 1000 1000 L 1000 0 Z" />
+            <path class="about-decor-line" d="M 430 0 C 425 60 470 90 470 120 C 470 170 400 175 400 120 C 400 70 470 60 500 95 C 530 125 578.4 120 578.4 170 L 578.4 860 C 578.4 930 626 975 696 1000" />
+            <path class="about-decor-line" d="M 660 0 C 630 60 590 80 545 105 C 505 128 500 190 505 250" />
+          </svg>
+          <span class="about-decor-dot about-decor-dot--crossing" aria-hidden="true"></span>
+          <span class="about-decor-dot about-decor-dot--end" aria-hidden="true"></span>
+          <div class="about-intro">
+            <h1 class="about-title">Quem<br>somos?</h1>
+            <div class="about-text">
               <p>
                 <strong class="brand-highlight">DMS – Desempenho Socioambiental</strong> atua na estruturação e implementação de <strong>soluções socioambientais</strong> para grandes projetos de infraestrutura, com foco em gestão de riscos, leitura territorial, desempenho social e aderência às melhores práticas internacionais de sustentabilidade.
               </p>
@@ -112,16 +115,16 @@
               </p>
             </div>
           </div>
-          <div class="hero-mission" aria-label="Missão e visão da DMS">
-            <article>
-              <span class="mission-icon" aria-hidden="true">
+          <div class="about-pillars" aria-label="Missão e visão da DMS">
+            <article class="about-pillar">
+              <span class="about-pillar-icon" aria-hidden="true">
                 <img src="assets/icons/missao.svg" alt="">
               </span>
               <h2>Missão</h2>
               <p>Implementar estratégias e soluções ESG, promovendo desempenho socioambiental, geração de impactos positivos nos territórios e fortalecimento da responsabilidade das empresas, em alinhamento às melhores práticas internacionais.</p>
             </article>
-            <article>
-              <span class="mission-icon" aria-hidden="true">
+            <article class="about-pillar">
+              <span class="about-pillar-icon" aria-hidden="true">
                 <img src="assets/icons/visao.svg" alt="">
               </span>
               <h2>Visão</h2>
@@ -159,11 +162,11 @@
           <div class="mission-panel">
             <article class="values-card">
               <p class="eyebrow">Nossos valores</p>
-              <h2>Conheça os nossos valores</h2>
+              <h2>Conheça nossos valores</h2>
               <ul>
                 <li>
                   <span class="value-icon" aria-hidden="true">
-                    <img src="assets/icons/tecnologias-sociais-inovacao.svg" alt="">
+                    <img src="assets/icons/laptop-with-leaf.svg" alt="">
                   </span>
                   <span class="value-copy">
                     <strong>Tecnologias sociais e inovação</strong>
@@ -172,7 +175,7 @@
                 </li>
                 <li>
                   <span class="value-icon" aria-hidden="true">
-                    <img src="assets/icons/responsabilidade-social.svg" alt="">
+                    <img src="assets/icons/hand-heart.svg" alt="">
                   </span>
                   <span class="value-copy">
                     <strong>Responsabilidade social</strong>
@@ -181,7 +184,7 @@
                 </li>
                 <li>
                   <span class="value-icon" aria-hidden="true">
-                    <img src="assets/icons/desempenho-socioambiental.svg" alt="">
+                    <img src="assets/icons/chart-axe.svg" alt="">
                   </span>
                   <span class="value-copy">
                     <strong>Desempenho socioambiental</strong>
@@ -190,7 +193,7 @@
                 </li>
                 <li>
                   <span class="value-icon" aria-hidden="true">
-                    <img src="assets/icons/impacto-transformacao-social.svg" alt="">
+                    <img src="assets/icons/community-house.svg" alt="">
                   </span>
                   <span class="value-copy">
                     <strong>Impacto e transformação social</strong>
@@ -199,7 +202,7 @@
                 </li>
                 <li>
                   <span class="value-icon" aria-hidden="true">
-                    <img src="assets/icons/etica-transparencia.svg" alt="">
+                    <img src="assets/icons/file-check-corner.svg" alt="">
                   </span>
                   <span class="value-copy">
                     <strong>Ética e transparência</strong>
@@ -208,7 +211,7 @@
                 </li>
                 <li>
                   <span class="value-icon" aria-hidden="true">
-                    <img src="assets/icons/excelencia-qualidade.svg" alt="">
+                    <img src="assets/icons/medail.svg" alt="">
                   </span>
                   <span class="value-copy">
                     <strong>Excelência na qualidade</strong>
@@ -217,7 +220,7 @@
                 </li>
                 <li>
                   <span class="value-icon" aria-hidden="true">
-                    <img src="assets/icons/parcerias-estrategicas.svg" alt="">
+                    <img src="assets/icons/handshaking.svg" alt="">
                   </span>
                   <span class="value-copy">
                     <strong>Parcerias estratégicas</strong>
@@ -230,33 +233,35 @@
         </div>
       </section>
 
-      <section class="section intro atua-section" id="sobre" aria-label="Nossa atuação">
-        <div class="atua-bg" aria-hidden="true"></div>
+      <section class="atua-section" id="sobre" aria-label="Nossa atuação">
+        <svg class="atua-bg" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path class="atua-bg-light" d="M 520 0 L 1000 0 L 1000 900 C 940 960 820 930 740 860 C 690 815 650 770 640 700 C 628 620 620 580 600 540 C 560 470 500 420 510 300 C 518 200 505 90 520 0 Z" />
+          <path class="atua-bg-accent" d="M 1000 500 C 950 580 890 650 920 740 C 945 810 960 860 1000 900 Z" />
+        </svg>
         <div class="container atua-layout">
+          <div class="atua-title-block">
+            <p class="eyebrow">Nossa atuação</p>
+          </div>
+
+          <div class="atua-kpi">
+            <div class="kpi-top">
+              <span class="kpi-label">Atuação em</span>
+              <strong>16</strong>
+            </div>
+            <span class="kpi-full">Estados brasileiros</span>
+          </div>
+
           <div class="atua-map-panel">
             <div class="atua-map-frame">
               <img decoding="async" loading="lazy" src="assets/atuacao/image20.webp" alt="Mapa do Brasil com a atuação da DMS destacada em estados brasileiros" class="atua-map">
               <span class="atua-pin pin-bahia" aria-label="Escritório na Bahia"></span>
               <span class="atua-pin pin-sergipe" aria-label="Escritório em Sergipe"></span>
             </div>
-            <div class="atua-title-block">
-              <span class="atua-dot" aria-hidden="true"></span>
-              <p class="eyebrow">Nossa atuação</p>
-            </div>
-            <div class="atua-legend" aria-label="Legenda do mapa">
-              <span><i class="legend-dot legend-blue"></i>Atuação DMS</span>
-              <span><i class="legend-dot legend-navy"></i>Bases estratégicas DMS</span>
-            </div>
           </div>
 
-          <div class="atua-content">
-            <div class="atua-kpi">
-              <div class="kpi-top">
-                <span class="kpi-label">Atuação em</span>
-                <strong>16</strong>
-              </div>
-              <span class="kpi-full">Estados brasileiros</span>
-            </div>
+          <div class="atua-legend" aria-label="Legenda do mapa">
+            <span><i class="legend-dot legend-blue"></i>Atuação DMS</span>
+            <span><i class="legend-dot legend-navy"></i>Bases estratégicas DMS</span>
           </div>
 
           <div class="atua-callout atua-callout-dark">
@@ -275,31 +280,36 @@
       </section>
 
       <section class="standards" id="padroes">
-        <div class="standards-image">
-          <img decoding="async" loading="lazy" src="assets_new/image14.jpeg" alt="Território e recursos naturais vistos de cima" />
-        </div>
-        <div class="standards-content">
-          <div class="section-title">
-            <p class="eyebrow">Padrões internacionais</p>
+        <svg class="standards-bg" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path d="M 0 170 C 90 140 200 150 300 200 C 420 260 560 280 630 350 C 680 400 580 430 480 470 C 420 500 450 700 410 820 C 385 900 360 960 350 1000 L 0 1000 Z" />
+        </svg>
+        <div class="container standards-layout">
+          <p class="eyebrow standards-eyebrow">Padrões internacionais</p>
+
+          <div class="standards-intro">
             <h2>Aderência a padrões internacionais</h2>
+            <p>A <strong>DMS</strong> atua em alinhamento com os padrões socioambientais e ESG exigidos pelas principais Instituições Financeiras Internacionais, apoiando clientes estratégicos e grandes empreendimentos de infraestrutura.</p>
           </div>
-          <p class="standards-lead">
-            A DMS atua em alinhamento com os padrões socioambientais e ESG exigidos pelas principais Instituições Financeiras Internacionais, apoiando clientes estratégicos e grandes empreendimentos de infraestrutura.
-          </p>
-          <p class="standards-list-intro">Esse alinhamento permite à DMS:</p>
-          <ul class="standards-list">
-            <li>Apoiar clientes na liberação de financiamentos internacionais</li>
-            <li>Atuar conforme padrões e salvaguardas socioambientais reconhecidas globalmente</li>
-            <li>Reduzir riscos socioambientais, regulatórios e reputacionais</li>
-            <li>Aplicar instrumentos técnicos exigidos pelos financiadores, como Planos de Ação Ambiental e Social (ESAP) e Sistemas de Gestão Ambiental e Social (ESMS)</li>
-          </ul>
-          <p class="institution-row-label">Instituições com as quais a DMS possui alinhamento técnico e experiência de atuação:</p>
-          <div class="institution-row" aria-label="Instituições de referência">
-            <img decoding="async" loading="lazy" src="assets_new/image15.png" alt="IFC" />
-            <img decoding="async" loading="lazy" src="assets/institutions/world-bank.svg" alt="The World Bank" />
-            <img decoding="async" loading="lazy" src="assets_new/image18.png" alt="IDB Invest" />
-            <img decoding="async" loading="lazy" src="assets/institutions/equator-principles.svg" alt="Equator Principles" />
-            <img decoding="async" loading="lazy" src="assets_new/image22.png" alt="European Bank for Reconstruction and Development" />
+
+          <div class="standards-institutions">
+            <p class="standards-institutions-label">Instituições com as quais a DMS possui alinhamento técnico e experiência de atuação:</p>
+            <div class="institution-row" aria-label="Instituições de referência">
+              <img decoding="async" loading="lazy" src="assets_new/image15.png" alt="IFC" />
+              <img decoding="async" loading="lazy" src="assets/institutions/world-bank.svg" alt="Impact Fund Denmark" />
+              <img decoding="async" loading="lazy" src="assets_new/image18.png" alt="IDB Invest" />
+              <img decoding="async" loading="lazy" src="assets/institutions/equator-principles.svg" alt="Equator Principles" />
+              <img decoding="async" loading="lazy" src="assets_new/image22.png" alt="European Bank for Reconstruction and Development" />
+            </div>
+          </div>
+
+          <div class="standards-benefits">
+            <p class="standards-list-intro">Esse alinhamento permite à DMS:</p>
+            <ul class="standards-list">
+              <li>Apoiar clientes na <strong>liberação de financiamentos internacionais</strong></li>
+              <li>Atuar conforme <strong>padrões e salvaguardas socioambientais reconhecidas globalmente</strong></li>
+              <li>Reduzir riscos socioambientais, regulatórios e reputacionais</li>
+              <li>Aplicar instrumentos técnicos exigidos pelos financiadores, como <strong>Planos de Ação Ambiental e Social (ESAP)</strong> e <strong>Sistemas de Gestão Ambiental e Social (ESMS)</strong></li>
+            </ul>
           </div>
         </div>
       </section>
@@ -315,7 +325,16 @@
               <article class="pd-flip" style="--pd-from:#9F1F35; --pd-to:#C92D45;" tabindex="0">
                 <div class="pd-flip-inner">
                   <div class="pd-flip-front">
-                    <img src="assets/mosaics/ifc-cards/pd1.svg" alt="PD1 — Avaliação e Gestão de Riscos e Impactos Socioambientais" loading="lazy" />
+                    <div class="pd-card">
+                      <span class="pd-card-mark" aria-hidden="true">PD1</span>
+                      <img class="pd-card-icon" src="assets/icons/clipboard-white.svg" alt="" aria-hidden="true" loading="lazy" />
+                      <span class="pd-card-code">PD1</span>
+                      <h3 class="pd-card-title">
+                        <span>Avaliação e Gestão de</span>
+                        <span>Riscos e Impactos</span>
+                        <span>Socioambientais</span>
+                      </h3>
+                    </div>
                   </div>
                   <div class="pd-flip-back">
                     <span>PD1</span>
@@ -326,7 +345,15 @@
               <article class="pd-flip" style="--pd-from:#AA8A21; --pd-to:#D5B33A;" tabindex="0">
                 <div class="pd-flip-inner">
                   <div class="pd-flip-front">
-                    <img src="assets/mosaics/ifc-cards/pd2.svg" alt="PD2 — Condições de Emprego e Trabalho" loading="lazy" />
+                    <div class="pd-card">
+                      <span class="pd-card-mark" aria-hidden="true">PD2</span>
+                      <img class="pd-card-icon" src="assets/icons/worker.svg" alt="" aria-hidden="true" loading="lazy" />
+                      <span class="pd-card-code">PD2</span>
+                      <h3 class="pd-card-title">
+                        <span>Condições de Emprego e</span>
+                        <span>Trabalho</span>
+                      </h3>
+                    </div>
                   </div>
                   <div class="pd-flip-back">
                     <span>PD2</span>
@@ -337,7 +364,15 @@
               <article class="pd-flip" style="--pd-from:#6F777D; --pd-to:#9EA5AA;" tabindex="0">
                 <div class="pd-flip-inner">
                   <div class="pd-flip-front">
-                    <img src="assets/mosaics/ifc-cards/pd3.svg" alt="PD3 — Eficiência de Recursos e Prevenção da Poluição" loading="lazy" />
+                    <div class="pd-card">
+                      <span class="pd-card-mark" aria-hidden="true">PD3</span>
+                      <img class="pd-card-icon" src="assets/icons/industry.svg" alt="" aria-hidden="true" loading="lazy" />
+                      <span class="pd-card-code">PD3</span>
+                      <h3 class="pd-card-title">
+                        <span>Eficiência de Recursos e</span>
+                        <span>Prevenção da Poluição</span>
+                      </h3>
+                    </div>
                   </div>
                   <div class="pd-flip-back">
                     <span>PD3</span>
@@ -348,7 +383,15 @@
               <article class="pd-flip" style="--pd-from:#082B69; --pd-to:#123F8C;" tabindex="0">
                 <div class="pd-flip-inner">
                   <div class="pd-flip-front">
-                    <img src="assets/mosaics/ifc-cards/pd4.svg" alt="PD4 — Saúde e Segurança da Comunidade" loading="lazy" />
+                    <div class="pd-card">
+                      <span class="pd-card-mark" aria-hidden="true">PD4</span>
+                      <img class="pd-card-icon" src="assets/icons/community-house-hands.svg" alt="" aria-hidden="true" loading="lazy" />
+                      <span class="pd-card-code">PD4</span>
+                      <h3 class="pd-card-title">
+                        <span>Saúde e Segurança da</span>
+                        <span>Comunidade</span>
+                      </h3>
+                    </div>
                   </div>
                   <div class="pd-flip-back">
                     <span>PD4</span>
@@ -359,7 +402,16 @@
               <article class="pd-flip" style="--pd-from:#1F5E32; --pd-to:#2E7D44;" tabindex="0">
                 <div class="pd-flip-inner">
                   <div class="pd-flip-front">
-                    <img src="assets/mosaics/ifc-cards/pd5.svg" alt="PD5 — Aquisição de Terras e Reassentamento Involuntário" loading="lazy" />
+                    <div class="pd-card">
+                      <span class="pd-card-mark" aria-hidden="true">PD5</span>
+                      <img class="pd-card-icon" src="assets/icons/backhoe.svg" alt="" aria-hidden="true" loading="lazy" />
+                      <span class="pd-card-code">PD5</span>
+                      <h3 class="pd-card-title">
+                        <span>Aquisição de Terras e</span>
+                        <span>Reassentamento</span>
+                        <span>Involuntário</span>
+                      </h3>
+                    </div>
                   </div>
                   <div class="pd-flip-back">
                     <span>PD5</span>
@@ -370,7 +422,17 @@
               <article class="pd-flip" style="--pd-from:#2D91B7; --pd-to:#62C4E9;" tabindex="0">
                 <div class="pd-flip-inner">
                   <div class="pd-flip-front">
-                    <img src="assets/mosaics/ifc-cards/pd6.svg" alt="PD6 — Conservação da Biodiversidade e Gestão Sustentável de Recursos Naturais" loading="lazy" />
+                    <div class="pd-card">
+                      <span class="pd-card-mark" aria-hidden="true">PD6</span>
+                      <img class="pd-card-icon" src="assets/icons/turtle.svg" alt="" aria-hidden="true" loading="lazy" />
+                      <span class="pd-card-code">PD6</span>
+                      <h3 class="pd-card-title">
+                        <span>Conservação da</span>
+                        <span>Biodiversidade e Gestão</span>
+                        <span>Sustentável de Recursos</span>
+                        <span>Naturais</span>
+                      </h3>
+                    </div>
                   </div>
                   <div class="pd-flip-back">
                     <span>PD6</span>
@@ -381,7 +443,14 @@
               <article class="pd-flip" style="--pd-from:#9D7F46; --pd-to:#C4A469;" tabindex="0">
                 <div class="pd-flip-inner">
                   <div class="pd-flip-front">
-                    <img src="assets/mosaics/ifc-cards/pd7.svg" alt="PD7 — Povos Indígenas" loading="lazy" />
+                    <div class="pd-card">
+                      <span class="pd-card-mark" aria-hidden="true">PD7</span>
+                      <img class="pd-card-icon" src="assets/icons/indigenous.svg" alt="" aria-hidden="true" loading="lazy" />
+                      <span class="pd-card-code">PD7</span>
+                      <h3 class="pd-card-title">
+                        <span>Povos Indígenas</span>
+                      </h3>
+                    </div>
                   </div>
                   <div class="pd-flip-back">
                     <span>PD7</span>
@@ -392,7 +461,14 @@
               <article class="pd-flip" style="--pd-from:#CB7A13; --pd-to:#F4A32E;" tabindex="0">
                 <div class="pd-flip-inner">
                   <div class="pd-flip-front">
-                    <img src="assets/mosaics/ifc-cards/pd8.svg" alt="PD8 — Patrimônio Cultural" loading="lazy" />
+                    <div class="pd-card">
+                      <span class="pd-card-mark" aria-hidden="true">PD8</span>
+                      <img class="pd-card-icon" src="assets/icons/pillar.svg" alt="" aria-hidden="true" loading="lazy" />
+                      <span class="pd-card-code">PD8</span>
+                      <h3 class="pd-card-title">
+                        <span>Patrimônio Cultural</span>
+                      </h3>
+                    </div>
                   </div>
                   <div class="pd-flip-back">
                     <span>PD8</span>
@@ -482,6 +558,10 @@
       </section>
 
       <section class="section sectors" id="setores">
+        <svg class="sectors-bg" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path class="sectors-bg-deep" d="M 0 520 C 110 470 230 500 300 590 C 370 680 360 800 440 880 C 490 930 520 970 540 1000 L 0 1000 Z" />
+          <path class="sectors-bg-light" d="M 1000 700 C 930 720 880 790 900 870 C 915 930 900 970 880 1000 L 1000 1000 Z" />
+        </svg>
         <div class="container">
           <div class="section-title wide">
             <p class="eyebrow">Setores de atuação</p>
@@ -526,7 +606,6 @@
               </div>
 
               <div class="sector-display" data-sector-display>
-                <img decoding="async" loading="lazy" class="sector-illustration" src="assets/foto-setores-atuacao-fundo.webp" alt="" aria-hidden="true">
                 <div class="sector-display-intro" data-sector-intro>
                   <p class="sector-fan-caption">Experiência transversal em setores e cadeias produtivas estratégicas</p>
                   <div class="sector-fan-cta">
@@ -699,131 +778,158 @@
           <div class="proof-head">
             <div class="section-title wide">
               <p class="eyebrow">Parcerias estratégicas</p>
-              <h2>Nossos clientes parceiros</h2>
+              <h2>Nossos clientes e parceiros</h2>
             </div>
           </div>
           <div class="logo-cloud" aria-label="Clientes e parceiros">
-            <img src="assets/logos/mineracao/clientes/anglo-american.png" alt="Anglo American" loading="lazy" decoding="async" />
-            <img src="assets/logos/mineracao/clientes/bamin.png" alt="BAMIN" loading="lazy" decoding="async" />
-            <img src="assets/logos/mineracao/clientes/csn.png" alt="CSN" loading="lazy" decoding="async" />
-            <img src="assets/logos/mineracao/clientes/jacobina-mineracao.png" alt="Jacobina Mineração" loading="lazy" decoding="async" />
-            <img src="assets/logos/mineracao/clientes/lundin-mining.png" alt="Lundin Mining" loading="lazy" decoding="async" />
-            <img src="assets/logos/mineracao/clientes/pan-american-silver.png" alt="Pan American Silver Brasil" loading="lazy" decoding="async" />
-            <img src="assets/logos/mineracao/clientes/piaui-niquel.png" alt="Piauí Níquel Metais" loading="lazy" decoding="async" />
-            <img src="assets/logos/mineracao/parceiros/arcadis.png" alt="Arcadis" loading="lazy" decoding="async" />
-            <img src="assets/logos/mineracao/parceiros/socionaut.png" alt="Socionaut" loading="lazy" decoding="async" />
-            <img src="assets/logos/mineracao/parceiros/sra.png" alt="SRA" loading="lazy" decoding="async" />
-            <img src="assets/logos/mineracao/parceiros/tetra-tech.png" alt="Tetra Tech" loading="lazy" decoding="async" />
-            <img src="assets/logos/papel-celulose/clientes/arauco.png" alt="Arauco" loading="lazy" decoding="async" />
-            <img src="assets/logos/papel-celulose/clientes/ebcf.png" alt="EBCF" loading="lazy" decoding="async" />
-            <img src="assets/logos/papel-celulose/clientes/klabin.png" alt="Klabin" loading="lazy" decoding="async" />
-            <img src="assets/logos/papel-celulose/clientes/ld-celulose.png" alt="LD Celulose" loading="lazy" decoding="async" />
-            <img src="assets/logos/papel-celulose/clientes/onf-international.png" alt="ONF International" loading="lazy" decoding="async" />
-            <img src="assets/logos/papel-celulose/clientes/suzano.png" alt="Suzano" loading="lazy" decoding="async" />
-            <img src="assets/logos/energia-oleo-gas/clientes/bmte.png" alt="BMTE" loading="lazy" decoding="async" />
-            <img src="assets/logos/energia-oleo-gas/clientes/carmo-energy.png" alt="Carmo Energy" loading="lazy" decoding="async" />
-            <img src="assets/logos/energia-oleo-gas/clientes/cobra-grupo.png" alt="Cobra Grupo" loading="lazy" decoding="async" />
-            <img src="assets/logos/energia-oleo-gas/clientes/norte-energia.png" alt="Norte Energia" loading="lazy" decoding="async" />
-            <img src="assets/logos/energia-oleo-gas/clientes/totalenergies.png" alt="TotalEnergies" loading="lazy" decoding="async" />
-            <img src="assets/logos/infraestrutura-mobilidade/clientes/byd.png" alt="BYD" loading="lazy" decoding="async" />
-            <img src="assets/logos/infraestrutura-mobilidade/clientes/ccr-metro.png" alt="CCR Metrô Bahia" loading="lazy" decoding="async" />
-            <img src="assets/logos/infraestrutura-mobilidade/clientes/infra-sa.png" alt="Infra S.A." loading="lazy" decoding="async" />
-            <img src="assets/logos/infraestrutura-mobilidade/clientes/skyrail-bahia.png" alt="Skyrail Bahia" loading="lazy" decoding="async" />
-            <img src="assets/logos/infraestrutura-mobilidade/parceiros/ifc.png" alt="IFC" loading="lazy" decoding="async" />
-            <img src="assets/logos/geral/afd.png" alt="AFD" loading="lazy" decoding="async" />
-            <img src="assets/logos/geral/biomas.png" alt="Biomas" loading="lazy" decoding="async" />
-            <img src="assets/logos/geral/cagece.png" alt="Cagece" loading="lazy" decoding="async" />
-            <img src="assets/logos/geral/fmo.png" alt="FMO" loading="lazy" decoding="async" />
-            <img src="assets/logos/geral/fundacao-butantan.png" alt="Fundação Butantan" loading="lazy" decoding="async" />
-            <img src="assets/logos/geral/idb-invest.png" alt="IDB Invest" loading="lazy" decoding="async" />
-            <img src="assets/logos/geral/impact-fund-denmark.png" alt="Impact Fund Denmark" loading="lazy" decoding="async" />
-            <img src="assets/logos/geral/insuco.png" alt="Insuco" loading="lazy" decoding="async" />
-            <img src="assets/logos/geral/veolia.png" alt="Veolia" loading="lazy" decoding="async" />
+            <span class="logo-cloud-item" style="--ar:3.1833;--cx:0.0636;--cy:0.1667;--cw:0.8682;--ch:0.6667"><img src="assets/logos/mineracao/clientes/anglo-american.png" alt="Anglo American" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:5.28;--cx:0.0714;--cy:0.234;--cw:0.8571;--ch:0.5319"><img src="assets/logos/mineracao/clientes/bamin.png" alt="BAMIN" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:2.3167;--cx:0.0683;--cy:0.1341;--cw:0.8634;--ch:0.7317"><img src="assets/logos/mineracao/clientes/csn.png" alt="CSN" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:2.8909;--cx:0.0699;--cy:0.1605;--cw:0.8548;--ch:0.679"><img src="assets/logos/mineracao/clientes/jacobina-mineracao.png" alt="Jacobina Mineração" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:2.0606;--cx:0.0696;--cy:0.125;--cw:0.8608;--ch:0.75"><img src="assets/logos/mineracao/clientes/lundin-mining.png" alt="Lundin Mining" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:3;--cx:0.0691;--cy:0.1625;--cw:0.8617;--ch:0.675"><img src="assets/logos/mineracao/clientes/pan-american-silver.png" alt="Pan American Silver Brasil" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:1.5679;--cx:0.068;--cy:0.1165;--cw:0.8639;--ch:0.7864"><img src="assets/logos/mineracao/clientes/piaui-niquel.png" alt="Piauí Níquel Metais" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:6.3929;--cx:0.068;--cy:0.25;--cw:0.8689;--ch:0.5"><img src="assets/logos/mineracao/parceiros/arcadis.png" alt="Arcadis" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:5.9677;--cx:0.0704;--cy:0.2581;--cw:0.8685;--ch:0.5"><img src="assets/logos/mineracao/parceiros/socionaut.png" alt="Socionaut" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:1.7013;--cx:0.0662;--cy:0.102;--cw:0.8675;--ch:0.7857"><img src="assets/logos/mineracao/parceiros/sra.png" alt="SRA" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:4.1042;--cx:0.0667;--cy:0.2;--cw:0.8756;--ch:0.6"><img src="assets/logos/mineracao/parceiros/tetra-tech.png" alt="Tetra Tech" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:6.0667;--cx:0.067;--cy:0.2459;--cw:0.8708;--ch:0.4918"><img src="assets/logos/papel-celulose/clientes/arauco.png" alt="Arauco" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:2.8226;--cx:0.0693;--cy:0.1573;--cw:0.8663;--ch:0.6966"><img src="assets/logos/papel-celulose/clientes/ebcf.png" alt="EBCF" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:1.4255;--cx:0.0705;--cy:0.0948;--cw:0.859;--ch:0.8103"><img src="assets/logos/papel-celulose/clientes/klabin.png" alt="Klabin" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:5.2;--cx:0.0667;--cy:0.2222;--cw:0.8667;--ch:0.5556"><img src="assets/logos/papel-celulose/clientes/ld-celulose.png" alt="LD Celulose" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:2.0538;--cx:0.0642;--cy:0.1167;--cw:0.8761;--ch:0.775"><img src="assets/logos/papel-celulose/clientes/onf-international.png" alt="ONF International" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:1.7625;--cx:0.0675;--cy:0.1165;--cw:0.865;--ch:0.7767"><img src="assets/logos/papel-celulose/clientes/suzano.png" alt="Suzano" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:2.8182;--cx:0.0722;--cy:0.1519;--cw:0.8611;--ch:0.6962"><img src="assets/logos/energia-oleo-gas/clientes/bmte.png" alt="BMTE" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:2.3623;--cx:0.0688;--cy:0.1368;--cw:0.8624;--ch:0.7263"><img src="assets/logos/energia-oleo-gas/clientes/carmo-energy.png" alt="Carmo Energy" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:2.7963;--cx:0.0686;--cy:0.1538;--cw:0.8629;--ch:0.6923"><img src="assets/logos/energia-oleo-gas/clientes/cobra-grupo.png" alt="Cobra Grupo" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:2.725;--cx:0;--cy:0;--cw:0.9397;--ch:1"><img src="assets/logos/energia-oleo-gas/clientes/norte-energia.png" alt="Norte Energia" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:1.2231;--cx:0.0357;--cy:0.037;--cw:0.9464;--ch:0.963"><img src="assets/logos/energia-oleo-gas/clientes/totalenergies.png" alt="TotalEnergies" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:4.75;--cx:0.071;--cy:0.22;--cw:0.8581;--ch:0.56"><img src="assets/logos/infraestrutura-mobilidade/clientes/byd.png" alt="BYD" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:1.6912;--cx:0.0677;--cy:0.1047;--cw:0.8647;--ch:0.7907"><img src="assets/logos/infraestrutura-mobilidade/clientes/ccr-metro.png" alt="CCR Metrô Bahia" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:5.5294;--cx:0.0648;--cy:0.2344;--cw:0.8704;--ch:0.5313"><img src="assets/logos/infraestrutura-mobilidade/clientes/infra-sa.png" alt="Infra S.A." loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:1.8254;--cx:0.0677;--cy:0.1111;--cw:0.8647;--ch:0.7778"><img src="assets/logos/infraestrutura-mobilidade/clientes/skyrail-bahia.png" alt="Skyrail Bahia" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:2.339;--cx:0.0688;--cy:0.1341;--cw:0.8625;--ch:0.7195"><img src="assets/logos/infraestrutura-mobilidade/parceiros/ifc.png" alt="IFC" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:2.2958;--cx:0.0688;--cy:0.134;--cw:0.8624;--ch:0.732"><img src="assets/logos/geral/afd.png" alt="AFD" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:4.0909;--cx:0.0696;--cy:0.2;--cw:0.8544;--ch:0.6"><img src="assets/logos/geral/biomas.png" alt="Biomas" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:3.6042;--cx:0.0697;--cy:0.1842;--cw:0.8607;--ch:0.6316"><img src="assets/logos/geral/cagece.png" alt="Cagece" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:1.3191;--cx:0.0694;--cy:0.0877;--cw:0.8611;--ch:0.8246"><img src="assets/logos/geral/fmo.png" alt="FMO" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:2.6389;--cx:0.0645;--cy:0.1386;--cw:0.8756;--ch:0.7129"><img src="assets/logos/geral/fundacao-butantan.png" alt="Fundação Butantan" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:2.4839;--cx:0.0674;--cy:0.1395;--cw:0.8652;--ch:0.7209"><img src="assets/logos/geral/idb-invest.png" alt="IDB Invest" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:2.9556;--cx:0.071;--cy:0.1642;--cw:0.8581;--ch:0.6716"><img src="assets/logos/geral/impact-fund-denmark.png" alt="Impact Fund Denmark" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:3.6875;--cx:0.0686;--cy:0.1842;--cw:0.8676;--ch:0.6316"><img src="assets/logos/geral/insuco.png" alt="Insuco" loading="lazy" decoding="async" /></span>
+            <span class="logo-cloud-item" style="--ar:4.15;--cx:0.0677;--cy:0.197;--cw:0.8646;--ch:0.6061"><img src="assets/logos/geral/veolia.png" alt="Veolia" loading="lazy" decoding="async" /></span>
           </div>
         </div>
       </section>
 
-      <section class="section experience">
-        <div class="container experience-grid">
-          <div class="experience-copy">
-            <div class="section-title">
-              <p class="eyebrow">Experiências em campo</p>
-              <h2>Conheça mais<br>algumas das nossas<br>experiências em<br>projetos de<br>reassentamento.</h2>
-            </div>
-            <p class="experience-caption">Clique nos vídeos ou escaneie os QR codes</p>
+      <section class="section projects">
+        <svg class="projects-bg" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path d="M 1000 0 L 1000 420 C 930 470 850 440 800 360 C 750 280 690 250 640 170 C 600 100 620 40 650 0 Z" />
+        </svg>
+        <div class="container projects-layout">
+          <div class="section-title projects-head">
+            <p class="eyebrow">Projetos na prática</p>
+            <h2>Conheça alguns dos nossos projetos na prática</h2>
+            <p class="projects-lead">Assista aos vídeos ou escaneie os QR Codes para saber mais.</p>
           </div>
-          <div class="experience-carousel" data-carousel="experiences" aria-label="Vídeos de experiências em campo">
-            <div class="experience-track">
-              <article class="experience-slide is-active">
-                <div class="experience-slide-text">
-                  <h3>
-                    <span class="experience-title-main">Plano de Reassentamento</span>
-                    <span class="experience-title-sub">Projeto no Estado de Sergipe</span>
-                  </h3>
-                  <p>Neste vídeo é apresentado como a DMS conduziu o Plano de Reassentamento de um projeto de infraestrutura no estado de Sergipe, beneficiando mais de 130 famílias.</p>
-                  <img class="experience-qr" src="assets/experiences/qrcodes/sergipe-reassentamento.png" alt="QR code do vídeo Plano de Reassentamento - Projeto no Estado de Sergipe" loading="lazy" />
-                </div>
-                <div class="experience-slide-video">
-                  <iframe src="https://www.youtube.com/embed/BnHsHgR1SyM?enablejsapi=1&amp;cc_load_policy=0" title="Plano de Reassentamento - Projeto no Estado de Sergipe" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-              </article>
-              <article class="experience-slide">
-                <div class="experience-slide-text">
-                  <h3>
-                    <span class="experience-title-main">Processo Participativo e</span>
-                    <span class="experience-title-sub">Negociação Coletiva</span>
-                  </h3>
-                  <p>Neste vídeo, apresentamos como a DMS estrutura processos participativos de acesso à terra, utilizando a negociação coletiva como estratégia para construir acordos amigáveis, reduzir riscos e fortalecer a legitimidade do projeto no território.</p>
-                  <img class="experience-qr" src="assets/experiences/qrcodes/negociacao-coletiva.png" alt="QR code do vídeo Processo Participativo e - Negociação Coletiva" loading="lazy" />
-                </div>
-                <div class="experience-slide-video">
-                  <iframe src="https://www.youtube.com/embed/ZXKXXMpK5RQ?enablejsapi=1&amp;cc_load_policy=0" title="Processo Participativo e - Negociação Coletiva" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-              </article>
-            </div>
-            <div class="experience-carousel-controls">
-              <button class="carousel-arrow carousel-arrow--prev" type="button" aria-label="Vídeo anterior">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-              <div class="experience-dots" aria-hidden="true"></div>
-              <button class="carousel-arrow carousel-arrow--next" type="button" aria-label="Próximo vídeo">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+          <div class="projects-gallery" data-projects-gallery>
+          <article class="project-card">
+            <div class="project-video">
+              <button class="project-play" type="button" data-video-id="BnHsHgR1SyM" aria-label="Assistir ao vídeo: Plano de Reassentamento em Sergipe">
+                <img src="https://i.ytimg.com/vi/BnHsHgR1SyM/maxresdefault.jpg" alt="" loading="lazy" decoding="async" />
+                <span class="project-play-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></svg>
+                </span>
               </button>
             </div>
+            <div class="project-body">
+              <h3>Plano de Reassentamento em Sergipe</h3>
+              <p>Neste vídeo é apresentado como a DMS conduziu o Plano de Reassentamento de um projeto de infraestrutura no estado de Sergipe, beneficiando mais de 130 famílias.</p>
+              <div class="project-qr">
+                <img src="assets/experiences/qrcodes/sergipe-reassentamento.png" alt="QR Code do vídeo Plano de Reassentamento em Sergipe" loading="lazy" decoding="async" />
+                <span>Escaneie para assistir no celular</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-video">
+              <button class="project-play" type="button" data-video-id="uFVe5RkrLfQ" aria-label="Assistir ao vídeo: Transformação social em reassentamentos">
+                <img src="https://i.ytimg.com/vi/uFVe5RkrLfQ/maxresdefault.jpg" alt="" loading="lazy" decoding="async" />
+                <span class="project-play-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></svg>
+                </span>
+              </button>
+            </div>
+            <div class="project-body">
+              <h3>Transformação social em reassentamentos</h3>
+              <p>Anos depois da mudança, voltamos ao Recanto dos Cajueiros, em Sergipe, para ouvir quem viveu essa experiência e entender o que permaneceu: as histórias, os vínculos e as transformações.</p>
+              <div class="project-qr">
+                <img src="assets/experiences/qrcodes/recanto-dos-cajueiros.png" alt="QR Code do vídeo Transformação social em reassentamentos" loading="lazy" decoding="async" />
+                <span>Escaneie para assistir no celular</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-video">
+              <button class="project-play" type="button" data-video-id="ZXKXXMpK5RQ" aria-label="Assistir ao vídeo: Processo Participativo e Negociação Coletiva">
+                <img src="https://i.ytimg.com/vi/ZXKXXMpK5RQ/maxresdefault.jpg" alt="" loading="lazy" decoding="async" />
+                <span class="project-play-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></svg>
+                </span>
+              </button>
+            </div>
+            <div class="project-body">
+              <h3>Processo Participativo e Negociação Coletiva</h3>
+              <p>Neste vídeo, apresentamos como a DMS estrutura processos participativos de acesso à terra, utilizando a negociação coletiva como estratégia para construir acordos amigáveis, reduzir riscos e fortalecer a legitimidade do projeto no território.</p>
+              <div class="project-qr">
+                <img src="assets/experiences/qrcodes/negociacao-coletiva.png" alt="QR Code do vídeo Processo Participativo e Negociação Coletiva" loading="lazy" decoding="async" />
+                <span>Escaneie para assistir no celular</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-video">
+              <button class="project-play" type="button" data-video-id="LBVEN7GsmAE" aria-label="Assistir ao vídeo: Projeto Piauí Níquel">
+                <img src="https://i.ytimg.com/vi/LBVEN7GsmAE/maxresdefault.jpg" alt="" loading="lazy" decoding="async" />
+                <span class="project-play-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></svg>
+                </span>
+              </button>
+            </div>
+            <div class="project-body">
+              <h3>Projeto Piauí Níquel</h3>
+              <p>Conheça a atuação da DMS no Projeto Piauí Níquel.</p>
+              <div class="project-qr">
+                <img src="assets/experiences/qrcodes/piaui-niquel.png" alt="QR Code do vídeo Projeto Piauí Níquel" loading="lazy" decoding="async" />
+                <span>Escaneie para assistir no celular</span>
+              </div>
+            </div>
+          </article>
           </div>
         </div>
       </section>
 
       <section class="cta" id="contato">
+        <svg class="cta-bg" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path class="cta-bg-shape" d="M 0 560 C 120 520 260 560 330 660 C 400 760 380 880 450 1000 L 0 1000 Z" />
+          <path class="cta-bg-accent" d="M 1000 0 L 1000 260 C 940 300 860 280 820 210 C 780 140 800 60 760 0 Z" />
+        </svg>
         <div class="container cta-grid">
           <div class="cta-intro">
             <div class="section-title">
               <p class="eyebrow">Contato</p>
-              <h2>Vamos Conversar</h2>
+              <h2>Vamos conversar</h2>
             </div>
-            <p class="cta-lead">Entre em contato para estruturarmos a melhor estratégia socioambiental para o seu projeto</p>
-            <div class="contact-shortcuts">
-              <div class="social-actions" aria-label="Canais digitais da DMS">
-                <a class="button primary social-button whatsapp" href="https://wa.me/5579998056153?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20DMS%20e%20gostaria%20de%20saber%20mais%2E" target="_blank" rel="noopener noreferrer">
-                  <span class="social-icon"><img decoding="async" loading="lazy" src="assets/social/whatsapp-icon.png" alt="" /></span>
-                  <span>WhatsApp</span>
-                </a>
-                <a class="button secondary social-button linkedin" href="https://www.linkedin.com/company/dmsocioambiental/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
-                  <span class="social-icon"><img decoding="async" loading="lazy" src="assets/social/linkedin-logo.png" alt="" /></span>
-                  <span>LinkedIn</span>
-                </a>
-                <a class="button secondary social-button instagram" href="https://www.instagram.com/dmsocioambiental?igsh=a3hkZ243bXoyZ2Vq" target="_blank" rel="noopener noreferrer">
-                  <span class="social-icon"><img decoding="async" loading="lazy" src="assets/social/instagram-logo.png" alt="" /></span>
-                  <span>Instagram</span>
-                </a>
-                <a class="button secondary social-button youtube" href="https://www.youtube.com/@dmsocioambiental" target="_blank" rel="noopener noreferrer">
-                  <span class="social-icon"><img decoding="async" loading="lazy" src="assets/social/youtube-logo.png" alt="" /></span>
-                  <span>YouTube</span>
-                </a>
+            <p class="cta-lead">Entre em contato para estruturarmos a melhor estratégia socioambiental para o seu projeto.</p>
+
+
+            <div class="contact-social">
+              <span class="contact-social-label">Acompanhe a DMS nas redes sociais:</span>
+              <div class="contact-social-links">
+                <a href="https://wa.me/5579998056153?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20DMS%20e%20gostaria%20de%20saber%20mais%2E" target="_blank" rel="noopener noreferrer"><span class="contact-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-stroke" d="M12 3.2a8.8 8.8 0 0 0-7.6 13.3L3.2 20.8l4.4-1.2A8.8 8.8 0 1 0 12 3.2z"/><path class="ic-fill" d="M9.1 7.9c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.3l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.1.1-.1.3 0 .5a7 7 0 0 0 3 2.9c.2.1.3.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.7.8c.2.1.3.3.3.5v.5c0 .3-.1.6-.5.9-.6.4-1.7.6-3.1 0a9.6 9.6 0 0 1-4.6-4.5c-.6-1.4-.4-2.6-.1-3.2z"/></svg></span><span class="contact-social-name">WhatsApp</span></a>
+                <a href="https://www.linkedin.com/company/dmsocioambiental/posts/?feedView=all" target="_blank" rel="noopener noreferrer"><span class="contact-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="ic-fill" x="3.5" y="9" width="3.6" height="11.5"/><circle class="ic-fill" cx="5.3" cy="5.2" r="2.1"/><path class="ic-fill" d="M9.8 9h3.5v1.6c.5-.9 1.7-1.9 3.6-1.9 3.7 0 4.4 2.4 4.4 5.6v6.2h-3.6v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.6H9.8z"/></svg></span><span class="contact-social-name">LinkedIn</span></a>
+                <a href="https://www.instagram.com/dmsocioambiental?igsh=a3hkZ243bXoyZ2Vq" target="_blank" rel="noopener noreferrer"><span class="contact-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="ic-stroke" x="3.5" y="3.5" width="17" height="17" rx="5"/><circle class="ic-stroke" cx="12" cy="12" r="4"/><circle class="ic-fill" cx="17.3" cy="6.7" r="1.1"/></svg></span><span class="contact-social-name">Instagram</span></a>
+                <a href="https://www.youtube.com/@dmsocioambiental" target="_blank" rel="noopener noreferrer"><span class="contact-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-fill" fill-rule="evenodd" d="M21.6 7.3a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.5a2.6 2.6 0 0 0-1.8 1.8C2 8.9 2 12 2 12s0 3.1.4 4.7a2.6 2.6 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.5a2.6 2.6 0 0 0 1.8-1.8c.4-1.6.4-4.7.4-4.7s0-3.1-.4-4.7zM10 15V9l5.2 3z"/></svg></span><span class="contact-social-name">YouTube</span></a>
               </div>
             </div>
           </div>
@@ -874,9 +980,42 @@
     </main>
 
     <footer class="footer">
-      <div class="container footer-inner">
-        <img class="footer-logo" loading="lazy" decoding="async" src="assets/intech/LogoDMS_Branca.png" alt="DMS Desempenho Socioambiental" />
-        <span>Desempenho socioambiental, ESG e gestão responsável de territórios.</span>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo" loading="lazy" decoding="async" src="assets/intech/LogoDMS_Branca.png" alt="DMS Desempenho Socioambiental" />
+          <p>Desempenho socioambiental, ESG e gestão responsável de territórios.</p>
+          <div class="footer-social">
+            <a href="https://wa.me/5579998056153?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20DMS%20e%20gostaria%20de%20saber%20mais%2E" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da DMS"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-stroke" d="M12 3.2a8.8 8.8 0 0 0-7.6 13.3L3.2 20.8l4.4-1.2A8.8 8.8 0 1 0 12 3.2z"/><path class="ic-fill" d="M9.1 7.9c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.3l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.1.1-.1.3 0 .5a7 7 0 0 0 3 2.9c.2.1.3.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.7.8c.2.1.3.3.3.5v.5c0 .3-.1.6-.5.9-.6.4-1.7.6-3.1 0a9.6 9.6 0 0 1-4.6-4.5c-.6-1.4-.4-2.6-.1-3.2z"/></svg></a>
+            <a href="https://www.linkedin.com/company/dmsocioambiental/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da DMS"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="ic-fill" x="3.5" y="9" width="3.6" height="11.5"/><circle class="ic-fill" cx="5.3" cy="5.2" r="2.1"/><path class="ic-fill" d="M9.8 9h3.5v1.6c.5-.9 1.7-1.9 3.6-1.9 3.7 0 4.4 2.4 4.4 5.6v6.2h-3.6v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.6H9.8z"/></svg></a>
+            <a href="https://www.instagram.com/dmsocioambiental?igsh=a3hkZ243bXoyZ2Vq" target="_blank" rel="noopener noreferrer" aria-label="Instagram da DMS"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="ic-stroke" x="3.5" y="3.5" width="17" height="17" rx="5"/><circle class="ic-stroke" cx="12" cy="12" r="4"/><circle class="ic-fill" cx="17.3" cy="6.7" r="1.1"/></svg></a>
+            <a href="https://www.youtube.com/@dmsocioambiental" target="_blank" rel="noopener noreferrer" aria-label="YouTube da DMS"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-fill" fill-rule="evenodd" d="M21.6 7.3a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.5a2.6 2.6 0 0 0-1.8 1.8C2 8.9 2 12 2 12s0 3.1.4 4.7a2.6 2.6 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.5a2.6 2.6 0 0 0 1.8-1.8c.4-1.6.4-4.7.4-4.7s0-3.1-.4-4.7zM10 15V9l5.2 3z"/></svg></a>
+          </div>
+        </div>
+
+        <nav class="footer-nav" aria-label="Rodapé">
+          <p class="footer-heading">Navegação</p>
+          <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#padroes">Padrões</a></li>
+            <li><a href="#setores">Setores</a></li>
+            <li><a href="time.html">Time</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <p class="footer-heading">Contato</p>
+          <ul>
+            <li><a href="https://wa.me/5579998056153?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20DMS%20e%20gostaria%20de%20saber%20mais%2E" target="_blank" rel="noopener noreferrer">WhatsApp: +55 (79) 99805-6153</a></li>
+            <li><a href="mailto:contato@dmsocioambiental.com">contato@dmsocioambiental.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© 2026 DMS – Desempenho Socioambiental. Todos os direitos reservados.</p>
+        <p class="footer-rights">Imagens e vídeos: acervo DMS. As marcas e os logotipos de clientes, parceiros e instituições pertencem aos seus respectivos titulares e são exibidos exclusivamente para fins de referência. É proibida a reprodução, distribuição ou utilização não autorizada dos conteúdos e imagens deste site.</p>
       </div>
     </footer>
 

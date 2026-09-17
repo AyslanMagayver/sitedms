@@ -88,7 +88,7 @@ function validate(formData, attachment) {
 
 async function submitContact(formData) {
   const unavailableMessage =
-    `O envio pelo site está temporariamente indisponível. Fale conosco pelo WhatsApp (botão acima) ou envie um e-mail para ${CONTACT_EMAIL}.`;
+    `O envio pelo site está temporariamente indisponível. Fale conosco pelo WhatsApp ou envie um e-mail para ${CONTACT_EMAIL}.`;
 
   let response;
   try {
