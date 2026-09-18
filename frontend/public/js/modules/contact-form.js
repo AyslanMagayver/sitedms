@@ -10,6 +10,7 @@ const ATTACHMENT_MIME_TYPES = [
   "application/vnd.openxmlformats-officedocument.presentationml.presentation",
 ];
 const SUBMIT_LABEL = "Enviar mensagem";
+const REQUEST_TIMEOUT_MS = 60 * 1000;
 
 export function initContactForm() {
   const form = document.querySelector("#contact-form");
@@ -62,7 +63,7 @@ function validate(formData, attachment) {
   if (attachment) {
     const extension = attachment.name.split(".").pop()?.toLowerCase();
     if (attachment.size > MAX_ATTACHMENT_BYTES) return "O anexo deve ter no máximo 5 MB.";
-    if (!ATTACHMENT_MIME_TYPES.includes(attachment.type) && !ATTACHMENT_EXTENSIONS.includes(extension)) {
+    if (!ATTACHMENT_EXTENSIONS.includes(extension) || (attachment.type && !ATTACHMENT_MIME_TYPES.includes(attachment.type))) {
       return "Envie apenas arquivos PDF, DOC, DOCX, PPT ou PPTX.";
     }
   }
@@ -92,7 +93,7 @@ async function submitContact(formData) {
 
   let response;
   try {
-    response = await fetch(CONTACT_ENDPOINT, { method: "POST", body: formData });
+    response = await fetch(CONTACT_ENDPOINT, { method: "POST", body: formData, signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) });
   } catch {
     // Em hospedagem estática (sem backend Node) o POST falha: oferece os
     // canais diretos em vez de uma mensagem técnica.

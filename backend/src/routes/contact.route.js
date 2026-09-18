@@ -21,13 +21,13 @@ export function createContactHandler({ config, mailer, rateLimiter }) {
       throw new HttpError(400, "Formato de formulário inválido.");
     }
 
-    const formData = await readFormData(req);
+    const formData = await readFormData(req, maxRequestBytes);
     const { name, email, subject, message, attachment } = validateContactForm(formData, { maxAttachmentBytes });
 
     const missingSettings = mailer.getMissingSettings();
     if (missingSettings.length) {
       console.error(`[contact] Config SMTP incompleta: ${missingSettings.join(", ")}`);
-      throw new HttpError(503, "Servidor de email ainda não configurado.");
+      throw new HttpError(503, "Servidor de e-mail ainda não configurado.");
     }
 
     const attachments = attachment

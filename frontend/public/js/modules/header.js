@@ -65,5 +65,10 @@ function initMobileMenu(header, menuToggle, nav) {
     if (event.key === "Escape") closeMenu();
   });
 
-  window.addEventListener("resize", closeMenu);
+  let lastWidth = window.innerWidth;
+  window.addEventListener("resize", () => {
+    if (window.innerWidth === lastWidth) return;
+    lastWidth = window.innerWidth;
+    closeMenu();
+  });
 }

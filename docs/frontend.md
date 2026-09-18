@@ -6,9 +6,9 @@ Todos os caminhos abaixo são relativos a `frontend/public/`, a pasta publicada 
 
 | Caminho | Função |
 | --- | --- |
-| `index.html` | Página principal (hero, valores, atuação, padrões IFC, soluções, setores, clientes, experiências, contato) |
+| `index.html` | Página principal (quem somos, valores, atuação, padrões, padrões IFC, soluções, setores, clientes, projetos na prática, contato) |
 | `time.html` | Página da equipe |
-| `css/styles.css` | Todos os estilos. Organizado em camadas históricas; a camada final `CAMADA DE POLIMENTO PREMIUM` (fim do arquivo) concentra tipografia, microinterações e correções responsivas — **novos overrides devem ser adicionados lá** para vencer a cascata |
+| `css/styles.css` | Todos os estilos. As seções redesenhadas ficam em blocos próprios no fim do arquivo (atuação, padrões, IFC, soluções, setores, clientes, projetos, contato e rodapé); ajustes de uma seção devem ser feitos no bloco dela |
 | `js/main.js` | Ponto de entrada; importa e inicializa cada módulo de `js/modules/` |
 | `js/config.js` | URL da API (local em `localhost`, produção nos demais casos) |
 | `assets/`, `assets_new/` | Imagens, ícones e logos |
@@ -22,7 +22,7 @@ O JavaScript usa ES modules (`<script type="module">`), então as páginas preci
 
 - **Fontes:** [Archivo](https://fonts.google.com/specimen/Archivo) para títulos/botões e [Inter](https://fonts.google.com/specimen/Inter) para texto, via Google Fonts (`var(--font-display)` / `var(--font-body)`).
 - **Cores (tokens em `:root`):** `--navy #002060`, `--blue #0165b6`, `--sky/--ice` para fundos claros, `--muted` para texto secundário.
-- **Breakpoints principais:** 1080px (colapso de grids e menu hambúrguer), 850/760/700px (seções específicas), 480px (listas em coluna única, títulos menores), 380px (botões sociais empilhados), 1920px+ (cap de largura no hero).
+- **Breakpoints principais:** 1080/1081px (colapso de grids e menu hambúrguer), 900/901px (setores e títulos), 860/861px (mapa de atuação), 700px (layout mobile), 480px (listas em coluna única, títulos menores), 1440px e 1920px (telas largas).
 - **Animações:** reveals de 420ms com stagger via `nth-child`; tudo respeita `prefers-reduced-motion`.
 
 ## Como editar conteúdo

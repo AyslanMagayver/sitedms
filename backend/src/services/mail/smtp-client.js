@@ -67,7 +67,7 @@ export function createSmtpClient(initialSocket, { timeoutMs }) {
   };
 }
 
-export function findSmtpReplyEnd(text) {
+function findSmtpReplyEnd(text) {
   const lines = text.split(/\r\n/);
   let offset = 0;
   for (const line of lines) {

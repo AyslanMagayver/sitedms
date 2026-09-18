@@ -1,6 +1,6 @@
 import { HttpError } from "../http/http-error.js";
 
-export const CONTACT_SUBJECTS = new Set([
+const CONTACT_SUBJECTS = new Set([
   "ESG e sustentabilidade",
   "Due diligence socioambiental",
   "ESAP, ESMS e padrões internacionais",
@@ -30,11 +30,11 @@ export function validateContactForm(formData, { maxAttachmentBytes }) {
   const message = cleanText(formData.get("mensagem"), FIELD_LIMITS.mensagem);
 
   if (!name || !email || !subject || !message) {
-    throw new HttpError(400, "Preencha nome, email, assunto e mensagem.");
+    throw new HttpError(400, "Preencha nome, e-mail, assunto e mensagem.");
   }
-  if (!isValidName(name)) throw new HttpError(400, "Informe um nome valido.");
-  if (!isValidEmail(email)) throw new HttpError(400, "Informe um email valido.");
-  if (!CONTACT_SUBJECTS.has(subject)) throw new HttpError(400, "Selecione um assunto valido.");
+  if (!isValidName(name)) throw new HttpError(400, "Informe um nome válido.");
+  if (!isValidEmail(email)) throw new HttpError(400, "Informe um e-mail válido.");
+  if (!CONTACT_SUBJECTS.has(subject)) throw new HttpError(400, "Selecione um assunto válido.");
   if (looksLikeSpam(message)) {
     throw new HttpError(400, "A mensagem parece conter links em excesso. Revise o texto e tente novamente.");
   }
@@ -52,7 +52,7 @@ function validateAttachment(file, maxAttachmentBytes) {
   const extension = fileName.split(".").pop()?.toLowerCase() || "";
 
   if (file.size > maxAttachmentBytes) {
-    throw new HttpError(413, "O anexo deve ter no maximo 5 MB.");
+    throw new HttpError(413, "O anexo deve ter no máximo 5 MB.");
   }
   if (!ATTACHMENT_EXTENSIONS.has(extension) || (file.type && !ATTACHMENT_MIME_TYPES.has(file.type))) {
     throw new HttpError(400, "Envie apenas arquivos PDF, DOC, DOCX, PPT ou PPTX.");
@@ -61,12 +61,12 @@ function validateAttachment(file, maxAttachmentBytes) {
   return { file, fileName, contentType: file.type || "application/octet-stream" };
 }
 
-export function cleanText(value, maxLength) {
+function cleanText(value, maxLength) {
   return String(value || "").trim().replace(/\0/g, "").slice(0, maxLength);
 }
 
-export function isValidName(value) {
-  const name = cleanText(value, FIELD_LIMITS.nome).replace(/\s+/g, " ");
+function isValidName(value) {
+  const name = value.replace(/\s+/g, " ");
   const letters = name.match(/\p{L}/gu) || [];
 
   if (name.length < 2 || letters.length < 2) return false;
@@ -78,14 +78,12 @@ export function isValidName(value) {
   return true;
 }
 
-export function isValidEmail(value) {
-  const email = cleanText(value, FIELD_LIMITS.email);
+function isValidEmail(email) {
   if (/[\r\n]/.test(email)) return false;
   return /^[^\s@<>(),;:"]+@[^\s@<>(),;:"]+\.[^\s@<>(),;:"]{2,}$/.test(email);
 }
 
-export function looksLikeSpam(value) {
-  const text = cleanText(value, FIELD_LIMITS.mensagem);
+function looksLikeSpam(text) {
   const linkMatches = text.match(/https?:\/\/|www\.|[a-z0-9-]+\.(com|net|org|info|xyz|top|click|shop|online)\b/gi) || [];
   const suspiciousTerms = text.match(/\b(viagra|casino|bet|crypto|forex|loan|winner|prize)\b/gi) || [];
 
@@ -96,6 +94,6 @@ export function looksLikeSpam(value) {
   return false;
 }
 
-export function sanitizeFileName(name) {
+function sanitizeFileName(name) {
   return String(name).replace(/[^\w.\-() ]+/g, "_").slice(0, 160);
 }
