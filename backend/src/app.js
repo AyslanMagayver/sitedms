@@ -6,13 +6,15 @@ import { applySecurityHeaders } from "./middleware/security-headers.js";
 import { createContactHandler } from "./routes/contact.route.js";
 import { handleHealth } from "./routes/health.route.js";
 import { createMailer } from "./services/mail/mailer.js";
+import { createRecaptchaVerifier } from "./services/recaptcha.js";
 
 export function createApp(config) {
   const mailer = createMailer(config.smtp);
   const rateLimiter = createRateLimiter(config.rateLimit);
+  const recaptcha = createRecaptchaVerifier(config.recaptcha);
   const routes = new Map([
     ["GET /health", handleHealth],
-    ["POST /api/contact", createContactHandler({ config, mailer, rateLimiter })],
+    ["POST /api/contact", createContactHandler({ config, mailer, rateLimiter, recaptcha })],
   ]);
   const knownPaths = new Set([...routes.keys()].map((route) => route.split(" ")[1]));
 

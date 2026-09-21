@@ -1,4 +1,5 @@
 import { CONTACT_EMAIL, CONTACT_ENDPOINT } from "../config.js";
+import { createRecaptcha } from "./recaptcha.js";
 
 const MAX_ATTACHMENT_BYTES = 5 * 1024 * 1024;
 const ATTACHMENT_EXTENSIONS = ["pdf", "doc", "docx", "ppt", "pptx"];
@@ -11,6 +12,7 @@ const ATTACHMENT_MIME_TYPES = [
 ];
 const SUBMIT_LABEL = "Enviar mensagem";
 const REQUEST_TIMEOUT_MS = 60 * 1000;
+const RECAPTCHA_REQUIRED_MESSAGE = "Confirme o reCAPTCHA antes de enviar.";
 
 export function initContactForm() {
   const form = document.querySelector("#contact-form");
@@ -18,6 +20,8 @@ export function initContactForm() {
 
   const submitButton = form.querySelector('button[type="submit"]');
   const status = form.querySelector(".form-status");
+  const recaptchaContainer = form.querySelector("[data-recaptcha]");
+  let isSubmitting = false;
 
   function setStatus(message, type = "") {
     if (!status) return;
@@ -25,11 +29,27 @@ export function initContactForm() {
     status.dataset.type = type;
   }
 
-  function setSubmitting(isSubmitting) {
+  const recaptcha = createRecaptcha(recaptchaContainer, {
+    onChange: (verified) => {
+      if (verified && status?.textContent === RECAPTCHA_REQUIRED_MESSAGE) setStatus("");
+      updateSubmitButton();
+    },
+    onLoadError: () => setStatus(`Não foi possível carregar a verificação de segurança. Recarregue a página ou fale conosco pelo WhatsApp ou pelo e-mail ${CONTACT_EMAIL}.`, "error"),
+  });
+
+  function updateSubmitButton() {
     if (!submitButton) return;
-    submitButton.disabled = isSubmitting;
+    submitButton.disabled = isSubmitting || !recaptcha.isVerified();
+    submitButton.setAttribute("aria-busy", String(isSubmitting));
     submitButton.textContent = isSubmitting ? "Enviando..." : SUBMIT_LABEL;
   }
+
+  function setSubmitting(value) {
+    isSubmitting = value;
+    updateSubmitButton();
+  }
+
+  updateSubmitButton();
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -38,6 +58,11 @@ export function initContactForm() {
     const validationError = validate(formData, form.querySelector('input[name="anexo"]')?.files?.[0]);
     if (validationError) {
       setStatus(validationError, "error");
+      return;
+    }
+
+    if (!recaptcha.isVerified()) {
+      setStatus(RECAPTCHA_REQUIRED_MESSAGE, "error");
       return;
     }
 
@@ -51,6 +76,7 @@ export function initContactForm() {
     } catch (error) {
       setStatus(error.message, "error");
     } finally {
+      recaptcha.reset();
       setSubmitting(false);
     }
   });

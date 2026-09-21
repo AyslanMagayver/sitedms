@@ -699,6 +699,10 @@ body.motion-ready .reveal-item:nth-child(4) {
   font-size: 0.78rem;
 }
 
+.form-recaptcha {
+  min-height: 78px;
+}
+
 .form-status {
   min-height: 20px;
   margin: 0;
@@ -729,8 +733,23 @@ body.motion-ready .reveal-item:nth-child(4) {
 }
 
 .contact-form .button:disabled {
-  cursor: wait;
+  cursor: not-allowed;
   opacity: 0.72;
+}
+
+.contact-form .button:disabled:hover {
+  transform: none;
+  filter: none;
+  box-shadow: 0 16px 34px rgba(var(--blue-3-rgb), 0.24);
+}
+
+.contact-form .button:disabled::before {
+  opacity: 0;
+  transform: translateX(-80%);
+}
+
+.contact-form .button[aria-busy="true"] {
+  cursor: wait;
 }
 
 .team-page {
@@ -5259,6 +5278,7 @@ body.motion-ready .solutions-grid .solution-card.reveal-item {
 
 .about-text p,
 .about-pillar p,
+.hero-card p,
 .standards-intro p,
 .pd-flip-back p,
 .solution-summary,

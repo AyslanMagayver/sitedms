@@ -7,3 +7,5 @@ export const API_BASE_URL = LOCAL_HOSTNAMES.has(window.location.hostname) ? LOCA
 export const CONTACT_ENDPOINT = `${API_BASE_URL}/api/contact`;
 
 export const CONTACT_EMAIL = "contato@dmsocioambiental.com";
+
+export const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";

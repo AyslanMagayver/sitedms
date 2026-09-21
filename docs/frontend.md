@@ -37,6 +37,7 @@ O JavaScript usa ES modules (`<script type="module">`), então as páginas preci
   O vídeo só é carregado quando a pessoa clica na miniatura, e apenas um toca por vez (`js/modules/project-videos.js`). No celular o QR Code fica oculto, já que a pessoa já está no próprio aparelho.
 - **Assuntos do formulário:** atualize o `<select>` em `index.html` **e** `CONTACT_SUBJECTS` em `backend/src/validators/contact.validator.js`.
 - **Endereço da API:** `js/config.js` (e o `action` do formulário em `index.html`).
+- **reCAPTCHA v2:** a chave do site fica em `RECAPTCHA_SITE_KEY`, em `js/config.js` (é pública por natureza); a chave secreta fica só no `.env` do backend (`RECAPTCHA_SECRET_KEY`). O widget é carregado quando o formulário se aproxima da tela e o botão de envio só habilita depois da confirmação (`js/modules/recaptcha.js`).
 
 ## Performance
 

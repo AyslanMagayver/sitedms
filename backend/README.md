@@ -29,15 +29,17 @@ Campos:
 - `assunto` — obrigatório, deve ser uma das opções de `CONTACT_SUBJECTS` em `src/validators/contact.validator.js` (as mesmas do `<select>` do site)
 - `mensagem` — obrigatório
 - `anexo` — opcional, até 5 MB, formatos PDF, DOC, DOCX, PPT ou PPTX
+- `g-recaptcha-response` — obrigatório, token do Google reCAPTCHA v2 gerado pelo widget do site; é validado no Google (`siteverify`) antes de qualquer outra validação
 
 Respostas: JSON `{ "ok": boolean, "message": string }`.
 
 | Status | Quando |
 | --- | --- |
 | 200 | Mensagem aceita pelo servidor SMTP |
-| 400 | Formulário malformado, campos inválidos, assunto fora da lista, anexo com formato não permitido, suspeita de spam |
+| 400 | Formulário malformado, reCAPTCHA ausente, expirado ou inválido, campos inválidos, assunto fora da lista, anexo com formato não permitido, suspeita de spam |
 | 413 | Requisição acima de 8 MB (conferida durante a leitura, mesmo sem `Content-Length`) ou anexo acima de 5 MB |
 | 429 | Mais de 5 envios pelo mesmo IP em 15 minutos |
+| 503 | Não foi possível consultar o Google para validar o reCAPTCHA |
 
 ## Variáveis de ambiente
 
@@ -56,6 +58,7 @@ Veja `.env.example`. **Todas são obrigatórias** e não há valor padrão no c�
 | `SMTP_DOMAIN` | texto | Nome usado no `EHLO` |
 | `CONTACT_TO` | e-mail | Destinatário das mensagens |
 | `CONTACT_FROM` | e-mail | Remetente |
+| `RECAPTCHA_SECRET_KEY` | texto | Chave secreta do Google reCAPTCHA v2 (par da chave do site em `frontend/public/js/config.js`) |
 
 ## Organização do código
 

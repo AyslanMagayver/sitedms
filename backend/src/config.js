@@ -70,6 +70,10 @@ export function loadConfig(env = process.env) {
       domain: text("SMTP_DOMAIN"),
       timeoutMs: 30 * 1000,
     },
+    recaptcha: {
+      secretKey: text("RECAPTCHA_SECRET_KEY"),
+      timeoutMs: 10 * 1000,
+    },
   };
 
   if (errors.length) {

@@ -74,6 +74,8 @@ Rodando em `localhost`, o frontend usa automaticamente a API local (`http://loca
 
 **Frontend:** publique o **conteúdo** da pasta `frontend/public/` na raiz da hospedagem estática (ex.: via FTP/File Manager na GoDaddy). Se a API mudar de endereço, atualize `frontend/public/js/config.js` e o `action` do formulário em `index.html`.
 
+**reCAPTCHA v2:** registre o domínio do site no [console do reCAPTCHA](https://www.google.com/recaptcha/admin) (tipo "Caixa de seleção Não sou um robô") e use o par de chaves gerado: a chave do site em `RECAPTCHA_SITE_KEY` (`frontend/public/js/config.js`) e a chave secreta em `RECAPTCHA_SECRET_KEY` (`.env` do backend / painel do Render).
+
 **Backend (Render):**
 
 | Configuração | Valor |

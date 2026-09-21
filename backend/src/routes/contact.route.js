@@ -5,11 +5,12 @@ import { sanitizeEmailHeader } from "../services/mail/mime-message.js";
 import { buildContactEmailHtml, buildContactEmailText } from "../templates/contact-email.js";
 import { validateContactForm } from "../validators/contact.validator.js";
 
-export function createContactHandler({ config, mailer, rateLimiter }) {
+export function createContactHandler({ config, mailer, rateLimiter, recaptcha }) {
   const { to, maxRequestBytes, maxAttachmentBytes } = config.contact;
 
   return async function handleContact(req, res) {
-    if (!rateLimiter.consume(getClientIp(req, config.trustProxy))) {
+    const clientIp = getClientIp(req, config.trustProxy);
+    if (!rateLimiter.consume(clientIp)) {
       throw new HttpError(429, "Muitas tentativas. Tente novamente em alguns minutos.");
     }
 
@@ -22,6 +23,8 @@ export function createContactHandler({ config, mailer, rateLimiter }) {
     }
 
     const formData = await readFormData(req, maxRequestBytes);
+    await recaptcha.verify(String(formData.get("g-recaptcha-response") || "").trim(), clientIp);
+
     const { name, email, subject, message, attachment } = validateContactForm(formData, { maxAttachmentBytes });
 
     const attachments = attachment
