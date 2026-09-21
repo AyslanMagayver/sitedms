@@ -20,6 +20,7 @@ O frontend chama a API por HTTP; o endereço da API fica em [`frontend/public/js
 .
 ├── frontend/
 │   ├── package.json            # npm run dev
+│   ├── .env.example            # FRONTEND_PORT
 │   ├── scripts/dev-server.js   # servidor estático só para desenvolvimento
 │   └── public/                 # site — o conteúdo desta pasta é o que vai para a hospedagem
 │       ├── index.html, time.html
@@ -36,7 +37,7 @@ O frontend chama a API por HTTP; o endereço da API fica em [`frontend/public/js
 │   ├── src/
 │   │   ├── server.js           # ponto de entrada (sobe o servidor HTTP)
 │   │   ├── app.js              # roteamento, CORS, tratamento de erros
-│   │   ├── config.js           # leitura das variáveis de ambiente
+│   │   ├── config.js           # leitura e validação das variáveis de ambiente
 │   │   ├── routes/             # handlers das rotas
 │   │   ├── validators/         # validação do formulário
 │   │   ├── services/mail/      # cliente SMTP e montagem da mensagem MIME
@@ -55,18 +56,19 @@ Não há dependências para instalar. Cada aplicação roda dentro da sua pasta,
 
 ```bash
 cd backend
-cp .env.example .env   # preencha o SMTP (opcional para navegar)
-npm start              # API em http://localhost:3000
+cp .env.example .env   # preencha todas as variáveis
+npm start              # API na porta definida em PORT
 ```
 
 **Frontend** (Node.js 20 ou superior):
 
 ```bash
 cd frontend
-npm run dev            # site em http://localhost:5500
+cp .env.example .env   # define FRONTEND_PORT
+npm run dev            # site na porta definida em FRONTEND_PORT
 ```
 
-Rodando em `localhost`, o frontend usa automaticamente a API local. Sem SMTP configurado, tudo funciona exceto o envio real do formulário (a API responde 503).
+Rodando em `localhost`, o frontend usa automaticamente a API local (`http://localhost:3000`, definido em `frontend/public/js/config.js`). Os dois servidores só sobem com todas as variáveis do respectivo `.env` preenchidas e válidas; caso contrário, listam no terminal o que falta.
 
 ## Deploy
 
@@ -81,7 +83,7 @@ Rodando em `localhost`, o frontend usa automaticamente a API local. Sem SMTP con
 | Start Command | `npm start` |
 | Health Check Path | `/health` |
 
-Variáveis de ambiente: as do [`backend/.env.example`](backend/.env.example). Em produção defina `ALLOWED_ORIGINS` com o(s) domínio(s) do site e `TRUST_PROXY=true`. Detalhes em [`backend/README.md`](backend/README.md).
+Variáveis de ambiente: todas as do [`backend/.env.example`](backend/.env.example), sem exceção. Em produção defina `ALLOWED_ORIGINS` com o(s) domínio(s) do site e `TRUST_PROXY=true`. Detalhes em [`backend/README.md`](backend/README.md).
 
 > O arquivo `docs/guia-deploy-dms-landing.pdf` descreve a arquitetura antiga (um único servidor Node servindo site e API) e está desatualizado.
 

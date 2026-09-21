@@ -3,7 +3,15 @@ import { createApp } from "./app.js";
 import { loadConfig, loadEnvFile } from "./config.js";
 
 loadEnvFile();
-const config = loadConfig();
+
+let config;
+try {
+  config = loadConfig();
+} catch (error) {
+  console.error(error.message);
+  process.exit(1);
+}
+
 const app = createApp(config);
 const server = createServer(app);
 

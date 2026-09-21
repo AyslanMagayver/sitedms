@@ -5171,7 +5171,7 @@ body.motion-ready .solutions-grid .solution-card.reveal-item {
 }
 
 .footer-rights {
-  max-width: 70ch;
+  text-align: justify;
 }
 
 @media (max-width: 1080px) {
@@ -5255,4 +5255,14 @@ body.motion-ready .solutions-grid .solution-card.reveal-item {
   outline: 2px solid var(--white);
   outline-offset: 4px;
   border-radius: 999px;
+}
+
+.about-text p,
+.about-pillar p,
+.standards-intro p,
+.pd-flip-back p,
+.solution-summary,
+.sectors-lead,
+.project-body p {
+  text-align: justify;
 }

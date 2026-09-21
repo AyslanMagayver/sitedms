@@ -11,7 +11,7 @@ npm start              # sobe a API
 npm run watch          # sobe a API e reinicia ao salvar arquivos
 ```
 
-A API sobe em `http://localhost:3000`.
+A API sobe na porta definida em `PORT`. Se alguma variável do `.env` estiver ausente ou inválida, ela não sobe e lista no terminal o que precisa ser corrigido.
 
 ## Rotas
 
@@ -38,23 +38,24 @@ Respostas: JSON `{ "ok": boolean, "message": string }`.
 | 400 | Formulário malformado, campos inválidos, assunto fora da lista, anexo com formato não permitido, suspeita de spam |
 | 413 | Requisição acima de 8 MB (conferida durante a leitura, mesmo sem `Content-Length`) ou anexo acima de 5 MB |
 | 429 | Mais de 5 envios pelo mesmo IP em 15 minutos |
-| 503 | Variáveis SMTP obrigatórias não configuradas |
 
 ## Variáveis de ambiente
 
-Veja `.env.example`. Variáveis já definidas no ambiente (ex.: painel da hospedagem) têm prioridade sobre o `.env`.
+Veja `.env.example`. **Todas são obrigatórias** e não há valor padrão no código. Variáveis já definidas no ambiente (ex.: painel da hospedagem) têm prioridade sobre o `.env`.
 
-| Variável | Obrigatória | Descrição |
+| Variável | Formato | Descrição |
 | --- | --- | --- |
-| `PORT` | não | Porta HTTP (padrão 3000) |
-| `ALLOWED_ORIGINS` | recomendada | Domínios do frontend autorizados via CORS, separados por vírgula. Padrão: domínio de produção + `localhost:5500` |
-| `TRUST_PROXY` | não | `true` atrás de proxy (Render, Nginx) para o rate limit usar o IP real do visitante: o último IP do `X-Forwarded-For`, adicionado pelo proxy |
-| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | **sim** | Servidor e credenciais SMTP |
-| `SMTP_SECURE` | não | `true` para TLS direto (porta 465) |
-| `SMTP_STARTTLS` | não | `false` desliga o STARTTLS (padrão ligado) |
-| `SMTP_DOMAIN` | não | Nome usado no `EHLO` (padrão `dmsocioambiental.com`) |
-| `CONTACT_TO` | não | Destinatário das mensagens (padrão `contato@dmsocioambiental.com`) |
-| `CONTACT_FROM` | não | Remetente (padrão `SMTP_USER`) |
+| `PORT` | porta (1-65535) | Porta HTTP da API |
+| `ALLOWED_ORIGINS` | lista separada por vírgula | Domínios do frontend autorizados via CORS |
+| `TRUST_PROXY` | `true` ou `false` | `true` atrás de proxy (Render, Nginx) para o rate limit usar o IP real do visitante: o último IP do `X-Forwarded-For`, adicionado pelo proxy |
+| `SMTP_HOST` | texto | Servidor SMTP |
+| `SMTP_PORT` | porta (1-65535) | Porta do servidor SMTP |
+| `SMTP_SECURE` | `true` ou `false` | `true` para TLS direto (porta 465) |
+| `SMTP_STARTTLS` | `true` ou `false` | Usa STARTTLS quando `SMTP_SECURE=false` |
+| `SMTP_USER`, `SMTP_PASS` | texto | Credenciais SMTP |
+| `SMTP_DOMAIN` | texto | Nome usado no `EHLO` |
+| `CONTACT_TO` | e-mail | Destinatário das mensagens |
+| `CONTACT_FROM` | e-mail | Remetente |
 
 ## Organização do código
 

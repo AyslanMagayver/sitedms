@@ -24,12 +24,6 @@ export function createContactHandler({ config, mailer, rateLimiter }) {
     const formData = await readFormData(req, maxRequestBytes);
     const { name, email, subject, message, attachment } = validateContactForm(formData, { maxAttachmentBytes });
 
-    const missingSettings = mailer.getMissingSettings();
-    if (missingSettings.length) {
-      console.error(`[contact] Config SMTP incompleta: ${missingSettings.join(", ")}`);
-      throw new HttpError(503, "Servidor de e-mail ainda não configurado.");
-    }
-
     const attachments = attachment
       ? [{
           filename: attachment.fileName,

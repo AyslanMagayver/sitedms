@@ -1,11 +1,21 @@
-import { createReadStream } from "node:fs";
+import { createReadStream, existsSync } from "node:fs";
 import { stat } from "node:fs/promises";
 import { createServer } from "node:http";
 import { dirname, extname, join, normalize, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const frontendDir = join(dirname(fileURLToPath(import.meta.url)), "..", "public");
-const port = Number(process.env.FRONTEND_PORT || 5500);
+const frontendRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
+const frontendDir = join(frontendRoot, "public");
+const envFile = join(frontendRoot, ".env");
+
+if (existsSync(envFile)) process.loadEnvFile(envFile);
+
+const rawPort = process.env.FRONTEND_PORT?.trim();
+const port = Number(rawPort);
+if (!rawPort || !/^\d+$/.test(rawPort) || port < 1 || port > 65535) {
+  console.error("Configuração inválida no .env:\n- FRONTEND_PORT deve ser uma porta entre 1 e 65535");
+  process.exit(1);
+}
 
 const MIME_TYPES = {
   ".html": "text/html; charset=utf-8",

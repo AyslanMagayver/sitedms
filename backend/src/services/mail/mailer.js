@@ -1,15 +1,10 @@
 import net from "node:net";
 import tls from "node:tls";
-import { getMissingSmtpSettings } from "../../config.js";
 import { buildMimeMessage } from "./mime-message.js";
 import { createSmtpClient } from "./smtp-client.js";
 
 export function createMailer(smtpConfig) {
   return {
-    getMissingSettings() {
-      return getMissingSmtpSettings(smtpConfig);
-    },
-
     async send({ to, replyTo, subject, text, html, attachments = [] }) {
       const { host, port, secure, startTls, user, pass, from, domain, timeoutMs } = smtpConfig;
 
