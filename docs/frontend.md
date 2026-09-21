@@ -48,7 +48,8 @@ O JavaScript usa ES modules (`<script type="module">`), então as páginas preci
 
 ## SEO
 
-- Meta description, canonical, Open Graph/Twitter cards e JSON-LD (`ProfessionalService`) nos `<head>` das duas páginas.
-- `robots.txt` e `sitemap.xml` na raiz de `public/` — atualize o sitemap ao criar páginas novas.
+- Meta description, canonical, Open Graph/Twitter cards e JSON-LD (`ProfessionalService`) nos `<head>` das duas páginas. Os dois blocos JSON-LD usam o mesmo `@id` (`https://dmsocioambiental.com/#organization`); o de `time.html` lista também a equipe em `employee` (nome, cargo, foto e LinkedIn) — ao incluir, remover ou alterar alguém no time, atualize também esse bloco.
+- `robots.txt` e `sitemap.xml` na raiz de `public/` — atualize o sitemap ao criar páginas novas e o `<lastmod>` da página ao alterar o conteúdo dela.
+- `demo.html` e `_qa-viewport.html` têm `noindex` e não entram no sitemap.
 - Imagem de compartilhamento: `assets/og-image.jpg` (1200×630).
 - Se o domínio mudar, buscar/substituir `dmsocioambiental.com` em `index.html`, `time.html`, `robots.txt`, `sitemap.xml` e `CNAME`, e atualizar `ALLOWED_ORIGINS` no backend.
