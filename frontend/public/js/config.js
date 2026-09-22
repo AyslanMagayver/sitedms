@@ -1,4 +1,4 @@
-const PRODUCTION_API_URL = "https://dms-landing-vsjk.onrender.com";
+const PRODUCTION_API_URL = "https://sitedms.onrender.com";
 const LOCAL_API_URL = "http://localhost:3000";
 const LOCAL_HOSTNAMES = new Set(["localhost", "127.0.0.1"]);
 
