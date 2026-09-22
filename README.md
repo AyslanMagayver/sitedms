@@ -9,7 +9,7 @@ O projeto é dividido em duas aplicações isoladas, cada uma com seu próprio `
 
 | Pasta | O que é | Onde roda |
 | --- | --- | --- |
-| [`frontend/`](frontend/) | Site estático (HTML, CSS, JS e imagens) | Qualquer hospedagem estática (Apache/GoDaddy, GitHub Pages, Netlify...) |
+| [`frontend/`](frontend/) | Site estático (HTML, CSS, JS e imagens) | GitHub Pages, publicado pelo GitHub Actions (domínio e DNS na GoDaddy) |
 | [`backend/`](backend/) | API do formulário de contato (`POST /api/contact`), envia e-mail via SMTP | Serviço Node.js (Render, Railway, VPS...) |
 
 O frontend chama a API por HTTP; o endereço da API fica em [`frontend/public/js/config.js`](frontend/public/js/config.js) e os domínios autorizados a chamá-la ficam na variável `ALLOWED_ORIGINS` do backend (CORS).
@@ -18,6 +18,8 @@ O frontend chama a API por HTTP; o endereço da API fica em [`frontend/public/js
 
 ```text
 .
+├── .github/workflows/
+│   └── deploy-pages.yml        # publica frontend/public no GitHub Pages
 ├── frontend/
 │   ├── package.json            # npm run dev
 │   ├── .env.example            # FRONTEND_PORT
@@ -72,7 +74,13 @@ Rodando em `localhost`, o frontend usa automaticamente a API local (`http://loca
 
 ## Deploy
 
-**Frontend:** publique o **conteúdo** da pasta `frontend/public/` na raiz da hospedagem estática (ex.: via FTP/File Manager na GoDaddy). Se a API mudar de endereço, atualize `frontend/public/js/config.js` e o `action` do formulário em `index.html`.
+**Frontend (GitHub Pages):** a cada push na `main`, o workflow [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) publica o conteúdo de `frontend/public/`. Ele também pode ser executado manualmente na aba **Actions** ("Run workflow").
+
+- **Configuração única no GitHub:** em **Settings → Pages → Build and deployment → Source**, selecione **GitHub Actions**. Em **Custom domain**, mantenha `dmsocioambiental.com` e deixe **Enforce HTTPS** marcado (com o deploy pelo Actions, o domínio vale pelo que está nessa tela; o arquivo `CNAME` não é lido).
+- **Domínio:** registrado na GoDaddy; o DNS aponta para o GitHub Pages (registros A 185.199.108.153 a 185.199.111.153 e `www` para o GitHub). Não é preciso alterar nada na GoDaddy.
+- **Hospedagem estática:** o GitHub Pages não executa Node.js nem lê o `.htaccess`; o formulário depende da API do backend.
+
+Se a API mudar de endereço, atualize `frontend/public/js/config.js` e o `action` do formulário em `index.html`.
 
 **reCAPTCHA v2:** registre o domínio do site no [console do reCAPTCHA](https://www.google.com/recaptcha/admin) (tipo "Caixa de seleção Não sou um robô") e use o par de chaves gerado: a chave do site em `RECAPTCHA_SITE_KEY` (`frontend/public/js/config.js`) e a chave secreta em `RECAPTCHA_SECRET_KEY` (`.env` do backend / painel do Render).
 

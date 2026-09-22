@@ -43,7 +43,7 @@ O JavaScript usa ES modules (`<script type="module">`), então as páginas preci
 
 - Imagens grandes foram convertidas/redimensionadas (WebP para fotos do time, mapa e ilustrações; JPEG progressivo para fundos). Ao adicionar imagens novas, mantenha **≤200 KB** e largura ≤1600px.
 - `loading="lazy"` + `decoding="async"` em tudo que fica abaixo da dobra.
-- Compressão e cache são configurados no `.htaccess` (Apache).
+- Compressão e HTTPS ficam a cargo do GitHub Pages. O `.htaccess` só teria efeito numa hospedagem Apache e é ignorado pelo Pages.
 - Fontes com `display=swap` e `preconnect`.
 
 ## SEO

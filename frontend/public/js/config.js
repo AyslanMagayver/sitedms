@@ -8,4 +8,4 @@ export const CONTACT_ENDPOINT = `${API_BASE_URL}/api/contact`;
 
 export const CONTACT_EMAIL = "contato@dmsocioambiental.com";
 
-export const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+export const RECAPTCHA_SITE_KEY = "6LceHsktAAAAAITpWxfB-NKl556xpNWC01s-6pbF";
